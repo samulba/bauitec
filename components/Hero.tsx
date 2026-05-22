@@ -65,13 +65,15 @@ export function Hero() {
         className="pointer-events-none absolute -right-40 -top-20 h-[42rem] w-[42rem] rounded-full bg-amber/20 blur-[120px]"
         aria-hidden
       />
-      {/* Parallax blueprint floor plan */}
-      <div
-        ref={planRef}
-        aria-hidden
-        className="pointer-events-none absolute -right-24 top-1/2 hidden w-[40rem] -translate-y-1/2 select-none lg:block xl:right-0"
-      >
-        <FloorPlan />
+      {/* Parallax blueprint floor plan — anchored to the centered content */}
+      <div className="pointer-events-none absolute inset-0 hidden select-none lg:block" aria-hidden>
+        <div className="relative mx-auto h-full max-w-6xl px-6">
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 xl:-right-12">
+            <div ref={planRef} className="w-[34rem] xl:w-[40rem]">
+              <FloorPlan />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-6">
@@ -192,48 +194,112 @@ function Stat({
 function FloorPlan() {
   return (
     <svg
-      viewBox="0 0 520 460"
+      viewBox="0 0 600 560"
       fill="none"
       className="draw-plan h-auto w-full text-amber"
       stroke="currentColor"
-      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
-      <g opacity={0.28} strokeLinecap="round">
-        {/* Dimension line (top) */}
-        <line x1="80" y1="44" x2="440" y2="44" strokeWidth={1} />
-        <line x1="80" y1="36" x2="80" y2="52" strokeWidth={1} />
-        <line x1="260" y1="36" x2="260" y2="52" strokeWidth={1} />
-        <line x1="440" y1="36" x2="440" y2="52" strokeWidth={1} />
+      {/* Dimension lines */}
+      <g opacity={0.3} strokeWidth={1}>
+        {/* top */}
+        <line x1="70" y1="64" x2="470" y2="64" />
+        <line x1="70" y1="56" x2="70" y2="72" />
+        <line x1="290" y1="56" x2="290" y2="72" />
+        <line x1="470" y1="56" x2="470" y2="72" />
+        {/* left */}
+        <line x1="44" y1="100" x2="44" y2="430" />
+        <line x1="36" y1="100" x2="52" y2="100" />
+        <line x1="36" y1="430" x2="52" y2="430" />
+      </g>
+      <g opacity={0.55} fontFamily="monospace" fontSize="12" letterSpacing="1" fill="currentColor" stroke="none">
+        <text x="180" y="52" textAnchor="middle">5,40</text>
+        <text x="380" y="52" textAnchor="middle">3,60</text>
+        <text x="22" y="270" textAnchor="middle" transform="rotate(-90 22 270)">6,80</text>
+      </g>
 
-        {/* Outer walls */}
-        <rect x="80" y="80" width="360" height="300" />
-        {/* Inner walls */}
-        <line x1="260" y1="80" x2="260" y2="240" />
-        <line x1="260" y1="240" x2="440" y2="240" />
-        <line x1="80" y1="240" x2="180" y2="240" />
+      {/* Walls (thick) */}
+      <g opacity={0.42} strokeWidth={4}>
+        <rect x="70" y="100" width="400" height="330" />
+        {/* interior walls */}
+        <line x1="290" y1="100" x2="290" y2="270" />
+        <line x1="290" y1="270" x2="470" y2="270" />
+        <line x1="70" y1="270" x2="180" y2="270" />
+        <line x1="180" y1="270" x2="180" y2="430" />
+        <line x1="290" y1="350" x2="470" y2="350" />
+      </g>
 
-        {/* Door swing (arc) */}
-        <path d="M180 240 A60 60 0 0 1 180 300" />
-        <line x1="180" y1="240" x2="180" y2="300" />
+      {/* Openings: doors (arcs) + windows */}
+      <g opacity={0.32} strokeWidth={1.5}>
+        {/* door 1 */}
+        <path d="M180 270 A55 55 0 0 1 235 325" />
+        <line x1="180" y1="270" x2="180" y2="325" opacity={0} />
+        {/* door 2 */}
+        <path d="M290 200 A48 48 0 0 0 338 248" />
+        {/* door 3 */}
+        <path d="M360 350 A40 40 0 0 1 360 310" />
+        {/* windows (double-line marks) */}
+        <line x1="110" y1="100" x2="210" y2="100" strokeWidth={3.5} />
+        <line x1="110" y1="96" x2="210" y2="96" />
+        <line x1="320" y1="430" x2="420" y2="430" strokeWidth={3.5} />
+        <line x1="320" y1="434" x2="420" y2="434" />
+        <line x1="470" y1="150" x2="470" y2="230" strokeWidth={3.5} />
+      </g>
 
-        {/* Window marks */}
-        <line x1="120" y1="80" x2="200" y2="80" strokeWidth={3} />
-        <line x1="320" y1="380" x2="400" y2="380" strokeWidth={3} />
+      {/* Stair hatching */}
+      <g opacity={0.3} strokeWidth={1.2}>
+        <rect x="310" y="290" width="120" height="50" />
+        <line x1="330" y1="290" x2="330" y2="340" />
+        <line x1="350" y1="290" x2="350" y2="340" />
+        <line x1="370" y1="290" x2="370" y2="340" />
+        <line x1="390" y1="290" x2="390" y2="340" />
+        <line x1="410" y1="290" x2="410" y2="340" />
+      </g>
 
-        {/* Stair hatching */}
-        <g strokeWidth={1}>
-          <rect x="300" y="280" width="110" height="80" />
-          <line x1="300" y1="296" x2="410" y2="296" />
-          <line x1="300" y1="312" x2="410" y2="312" />
-          <line x1="300" y1="328" x2="410" y2="328" />
-          <line x1="300" y1="344" x2="410" y2="344" />
-        </g>
+      {/* Room labels */}
+      <g opacity={0.6} fontFamily="monospace" fontSize="13" letterSpacing="2" fill="currentColor" stroke="none">
+        <text x="180" y="190">WOHNEN</text>
+        <text x="115" y="360">KÜCHE</text>
+        <text x="360" y="195">ZIMMER</text>
+        <text x="380" y="405">BAD</text>
+      </g>
+
+      {/* North arrow */}
+      <g opacity={0.5} strokeWidth={1.4}>
+        <circle cx="540" cy="120" r="22" />
+        <path d="M540 104 L548 132 L540 124 L532 132 Z" strokeWidth={1} />
+        <text x="540" y="158" textAnchor="middle" fontFamily="monospace" fontSize="11" fill="currentColor" stroke="none">N</text>
+      </g>
+
+      {/* Scale bar */}
+      <g opacity={0.45} strokeWidth={1.2}>
+        <line x1="70" y1="470" x2="190" y2="470" />
+        <line x1="70" y1="465" x2="70" y2="475" />
+        <line x1="110" y1="465" x2="110" y2="475" />
+        <line x1="150" y1="465" x2="150" y2="475" />
+        <line x1="190" y1="465" x2="190" y2="475" />
+        <text x="70" y="492" fontFamily="monospace" fontSize="10" letterSpacing="1" fill="currentColor" stroke="none">0      2      4 m</text>
+      </g>
+
+      {/* Title block */}
+      <g opacity={0.45} strokeWidth={1.2}>
+        <rect x="320" y="455" width="210" height="75" />
+        <line x1="320" y1="485" x2="530" y2="485" />
+        <line x1="430" y1="485" x2="430" y2="530" />
+      </g>
+      <g opacity={0.7} fontFamily="monospace" fill="currentColor" stroke="none" letterSpacing="1">
+        <text x="332" y="477" fontSize="14">bauitec</text>
+        <text x="332" y="505" fontSize="10">GRUNDRISS · EG</text>
+        <text x="332" y="520" fontSize="10">M 1:100</text>
+        <text x="442" y="505" fontSize="10">BV — 2025</text>
+        <text x="442" y="520" fontSize="10">POING</text>
       </g>
 
       {/* Corner registration marks */}
       <g opacity={0.4} strokeWidth={1.2}>
-        <path d="M64 80 h-16 M64 80 v-16" />
-        <path d="M456 80 h16 M456 80 v-16" />
+        <path d="M70 100 h-18 M70 100 v-18" />
+        <path d="M470 100 h18 M470 100 v-18" />
       </g>
     </svg>
   );
