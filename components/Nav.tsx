@@ -65,7 +65,7 @@ export function Nav({ solid = false }: { solid?: boolean }) {
         </nav>
 
         <a
-          href="/#kontakt"
+          href="/kontakt"
           className="hidden rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5 md:inline-flex"
         >
           Anfrage senden →
@@ -123,7 +123,7 @@ export function Nav({ solid = false }: { solid?: boolean }) {
             </a>
           ))}
           <a
-            href="/#kontakt"
+            href="/kontakt"
             onClick={() => setOpen(false)}
             className="mt-4 inline-flex justify-center rounded-full bg-amber px-5 py-3 text-base font-medium text-ink"
           >

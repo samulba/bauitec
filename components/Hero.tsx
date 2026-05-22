@@ -112,7 +112,7 @@ export function Hero() {
             <Reveal delay={440}>
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <a
-                  href="#kontakt"
+                  href="/kontakt"
                   className="group relative overflow-hidden rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
                 >
                   <span className="relative z-10">Projekt anfragen →</span>
