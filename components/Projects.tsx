@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { ParallaxBox } from "./ParallaxBox";
 import { projects } from "@/lib/content";
 
 export function Projects() {
@@ -26,11 +27,13 @@ export function Projects() {
 
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
           {projects.map((p, i) => (
-            <Reveal key={p.title} delay={i * 90}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line-dark bg-ink-soft">
+            <Reveal key={p.title} delay={i * 110} variant="scale">
+              <article className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-line-dark bg-ink-soft hover:border-amber/40">
                 <div className="relative aspect-[4/3] overflow-hidden bg-line-dark">
-                  <PlaceholderImage index={i} />
-                  <span className="absolute left-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-medium backdrop-blur-sm">
+                  <ParallaxBox speed={0.06} className="absolute inset-[-12%]">
+                    <PlaceholderImage index={i} />
+                  </ParallaxBox>
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-ink/70 px-3 py-1 text-xs font-medium backdrop-blur-sm">
                     {p.tag}
                   </span>
                 </div>
@@ -58,7 +61,7 @@ function PlaceholderImage({ index }: { index: number }) {
   return (
     <svg
       viewBox="0 0 400 300"
-      className="h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+      className="zoom-img h-full w-full object-cover opacity-90"
       aria-hidden
     >
       <defs>

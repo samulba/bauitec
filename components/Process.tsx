@@ -19,10 +19,15 @@ export function Process() {
 
         <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {process.map((step, i) => (
-            <Reveal key={step.num} delay={i * 90}>
-              <div className="pt-5">
-                <span className="block h-[3px] w-10 bg-amber" aria-hidden />
-                <p className="eyebrow mt-5 text-stone">{step.num}</p>
+            <Reveal key={step.num} delay={i * 110} variant="left">
+              <div className="group pt-5">
+                <span
+                  className="block h-[3px] w-10 bg-amber transition-all duration-500 group-hover:w-20"
+                  aria-hidden
+                />
+                <p className="eyebrow mt-5 text-stone transition-colors group-hover:text-amber">
+                  {step.num}
+                </p>
                 <h3 className="mt-3 text-xl font-semibold tracking-tight">
                   {step.title}
                 </h3>

@@ -7,9 +7,14 @@ import { nav } from "@/lib/content";
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -80,6 +85,13 @@ export function Nav() {
           </span>
         </button>
       </div>
+
+      {/* Scroll progress */}
+      <div
+        className="absolute bottom-0 left-0 h-0.5 bg-amber transition-[width] duration-150 ease-out"
+        style={{ width: `${progress}%` }}
+        aria-hidden
+      />
 
       {/* Mobile menu */}
       <div

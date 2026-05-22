@@ -26,12 +26,16 @@ export function Services() {
 
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
-            <Reveal key={s.num} delay={(i % 4) * 70}>
-              <article className="group flex h-full flex-col bg-paper p-7 transition-colors hover:bg-soft">
-                <p className="eyebrow text-stone">
+            <Reveal key={s.num} delay={(i % 4) * 80} variant="scale">
+              <article className="hover-lift group relative flex h-full flex-col overflow-hidden bg-paper p-7 hover:bg-soft">
+                <span
+                  className="absolute right-0 top-0 h-1 w-0 bg-amber transition-all duration-500 group-hover:w-full"
+                  aria-hidden
+                />
+                <p className="eyebrow text-stone transition-colors group-hover:text-amber">
                   {s.num} · {s.label}
                 </p>
-                <div className="mt-6 text-amber transition-transform duration-300 group-hover:-translate-y-0.5">
+                <div className="mt-6 text-amber transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110">
                   <ServiceIcon name={s.icon} />
                 </div>
                 <h3 className="mt-5 text-xl font-semibold tracking-tight">
