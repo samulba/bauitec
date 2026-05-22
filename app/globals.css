@@ -62,6 +62,19 @@ body {
   font-weight: 400;
 }
 
+/* Underline that "draws" in when its Reveal ancestor becomes visible */
+.underline-draw {
+  background-image: linear-gradient(var(--color-amber), var(--color-amber));
+  background-position: 0 92%;
+  background-repeat: no-repeat;
+  background-size: 0% 0.18em;
+  padding-bottom: 0.02em;
+  transition: background-size 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+}
+.in .underline-draw {
+  background-size: 100% 0.18em;
+}
+
 /* ---- Scroll reveal variants ---- */
 .reveal {
   opacity: 0;
@@ -159,5 +172,9 @@ body {
   .hover-lift:hover,
   .group:hover .zoom-img {
     transform: none;
+  }
+  .underline-draw {
+    background-size: 100% 0.18em;
+    transition: none;
   }
 }

@@ -13,7 +13,7 @@ export function Marquee() {
   const row = [...items, ...items];
   return (
     <div className="marquee overflow-hidden border-y border-line-dark bg-ink py-5 text-paper">
-      <div className="marquee-track">
+      <div className="marquee-track" style={{ animationDuration: "60s" }}>
         {row.map((item, i) => (
           <span key={i} className="flex items-center">
             <span className="px-7 text-2xl font-medium tracking-tight sm:text-3xl">

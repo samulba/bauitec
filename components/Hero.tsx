@@ -2,13 +2,16 @@
 
 import { useEffect, useRef } from "react";
 import { Reveal } from "./Reveal";
+import { CountUp } from "./CountUp";
 
 export function Hero() {
   const monoRef = useRef<HTMLSpanElement | null>(null);
+  const glowRef = useRef<HTMLDivElement | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const mono = monoRef.current;
+    const glow = glowRef.current;
     const section = sectionRef.current;
     if (!mono || !section) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -21,18 +24,19 @@ export function Hero() {
     const apply = () => {
       raf = 0;
       mono.style.transform = `translate3d(${mx}px, ${my + sy}px, 0)`;
+      if (glow) glow.style.transform = `translate3d(${mx * -0.6}px, ${my * -0.6}px, 0)`;
     };
     const schedule = () => {
       if (!raf) raf = requestAnimationFrame(apply);
     };
     const onMove = (e: MouseEvent) => {
       const r = section.getBoundingClientRect();
-      mx = ((e.clientX - r.width / 2) / r.width) * 30;
-      my = ((e.clientY - r.height / 2) / r.height) * 30;
+      mx = ((e.clientX - r.width / 2) / r.width) * 34;
+      my = ((e.clientY - r.height / 2) / r.height) * 34;
       schedule();
     };
     const onScroll = () => {
-      sy = window.scrollY * 0.12;
+      sy = window.scrollY * 0.14;
       schedule();
     };
     section.addEventListener("mousemove", onMove);
@@ -48,102 +52,134 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative overflow-hidden bg-paper pt-36 pb-20 md:pt-44 md:pb-28"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-ink pt-32 pb-14 text-paper"
     >
-      {/* Blueprint grid */}
+      {/* Blueprint grid (amber, masked) */}
       <div
-        className="blueprint pointer-events-none absolute inset-0 text-ink [mask-image:radial-gradient(80%_70%_at_50%_30%,black,transparent)]"
+        className="blueprint pointer-events-none absolute inset-0 text-amber [mask-image:radial-gradient(90%_80%_at_30%_40%,black,transparent)]"
         aria-hidden
       />
-
+      {/* Amber glow */}
+      <div
+        ref={glowRef}
+        className="pointer-events-none absolute -right-40 -top-20 h-[42rem] w-[42rem] rounded-full bg-amber/20 blur-[120px]"
+        aria-hidden
+      />
       {/* Parallax B monogram */}
       <span
         ref={monoRef}
         aria-hidden
-        className="serif-italic pointer-events-none absolute -right-10 top-1/2 hidden -translate-y-1/2 select-none text-[34rem] leading-none text-amber/[0.10] lg:block"
+        className="serif-italic pointer-events-none absolute -right-16 top-1/2 hidden -translate-y-1/2 select-none text-[40rem] leading-none text-amber/[0.14] lg:block"
       >
         B
       </span>
 
-      <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 lg:grid-cols-[1.55fr_1fr] lg:items-end">
-        <div>
-          <Reveal>
-            <p className="eyebrow text-stone">
-              01 — Bauunternehmen · Poing bei München
-            </p>
+      <div className="relative mx-auto w-full max-w-6xl px-6">
+        {/* Availability pill */}
+        <Reveal>
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-line-dark bg-ink-soft/60 px-4 py-2 backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber" />
+            </span>
+            <span className="eyebrow text-paper/80">
+              Poing bei München · Erstgespräch kostenlos
+            </span>
+          </div>
+        </Reveal>
+
+        <h1 className="mt-8 text-[3.25rem] font-semibold leading-[0.92] tracking-tight sm:text-7xl md:text-8xl">
+          <Reveal delay={80} as="span" className="block">
+            Wir bauen,
           </Reveal>
-
-          <h1 className="mt-6 text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl md:text-7xl">
-            <Reveal delay={80} as="span" className="block">
-              Wir bauen,
-            </Reveal>
-            <Reveal delay={170} as="span" className="block">
-              <span className="mark">was&nbsp;bleibt.</span>
-            </Reveal>
-            <Reveal delay={260} as="span" variant="left" className="block">
-              <span className="serif-italic text-stone">
-                nicht das Versprechen.
-              </span>
-            </Reveal>
-          </h1>
-
-          <Reveal delay={360}>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink/70">
-              Sanierung, Innenausbau, Beton- und Gartenarbeiten — vom ersten
-              Aushub bis zur Abnahme. In einer Hand. Mit eigenem Team. In Poing
-              bei München.
-            </p>
+          <Reveal delay={170} as="span" className="block">
+            <span className="mark">was&nbsp;bleibt.</span>
           </Reveal>
-
-          <Reveal delay={440}>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#kontakt"
-                className="group relative overflow-hidden rounded-full bg-amber px-7 py-3.5 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
-              >
-                <span className="relative z-10">Projekt anfragen →</span>
-                <span className="absolute inset-0 -translate-x-full bg-ink/10 transition-transform duration-500 group-hover:translate-x-0" />
-              </a>
-              <a
-                href="#leistungen"
-                className="rounded-full border border-ink/20 px-7 py-3.5 text-base font-medium text-ink transition-colors hover:border-ink/50 hover:bg-ink/[0.03]"
-              >
-                Leistungen ansehen
-              </a>
-            </div>
+          <Reveal delay={260} as="span" variant="left" className="block">
+            <span className="serif-italic text-stone-light">
+              nicht das Versprechen.
+            </span>
           </Reveal>
-        </div>
+        </h1>
 
-        <Reveal delay={520} variant="right" className="lg:pb-2">
-          <div className="space-y-5 border-l-2 border-amber pl-5">
+        <Reveal delay={360}>
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-paper/70">
+            Sanierung, Innenausbau, Beton- und Gartenarbeiten — vom ersten
+            Aushub bis zur Abnahme. In einer Hand. Mit eigenem Team. In Poing
+            bei München.
+          </p>
+        </Reveal>
+
+        <Reveal delay={440}>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="#kontakt"
+              className="group relative overflow-hidden rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
+            >
+              <span className="relative z-10">Projekt anfragen →</span>
+              <span className="absolute inset-0 -translate-x-full bg-paper/20 transition-transform duration-500 group-hover:translate-x-0" />
+            </a>
+            <a
+              href="#leistungen"
+              className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium text-paper transition-colors hover:border-paper/60 hover:bg-paper/5"
+            >
+              Leistungen ansehen
+            </a>
+          </div>
+        </Reveal>
+
+        {/* Trust / stats strip */}
+        <Reveal delay={560}>
+          <div className="mt-16 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-8 border-t border-line-dark pt-8 sm:grid-cols-4">
             <div>
-              <p className="text-3xl font-semibold tracking-tight">93+</p>
-              <p className="text-sm text-stone">Bauvorhaben</p>
-            </div>
-            <div>
-              <p className="text-3xl font-semibold tracking-tight">98%</p>
-              <p className="text-sm text-stone">Kundenzufriedenheit</p>
-            </div>
-            <div>
-              <p className="text-sm font-medium text-ink/80">
-                Eigenes Team · Eigene Geräte
+              <div className="flex gap-0.5 text-amber" aria-hidden>
+                {"★★★★★".split("").map((s, i) => (
+                  <span key={i}>{s}</span>
+                ))}
+              </div>
+              <p className="mt-2 text-sm text-paper/60">
+                <CountUp end={98} />% Weiterempfehlung
               </p>
+            </div>
+            <Stat value={93} suffix="+" label="Bauvorhaben" />
+            <Stat value={7} label="Gewerke" />
+            <div>
+              <p className="text-2xl font-semibold tracking-tight">0€</p>
+              <p className="mt-1 text-sm text-paper/60">Subunternehmer</p>
             </div>
           </div>
         </Reveal>
       </div>
 
       {/* Scroll hint */}
-      <div className="relative mx-auto mt-16 max-w-6xl px-6 md:mt-24">
-        <Reveal delay={620}>
-          <div className="flex items-center gap-3 text-stone">
-            <span className="relative flex h-9 w-5 justify-center rounded-full border border-stone/50">
-              <span className="mt-1.5 h-1.5 w-1 animate-bounce rounded-full bg-amber" />
-            </span>
-            <span className="eyebrow">Scroll</span>
-          </div>
-        </Reveal>
+      <div className="relative mx-auto mt-12 w-full max-w-6xl px-6">
+        <div className="flex items-center gap-3 text-paper/50">
+          <span className="relative flex h-9 w-5 justify-center rounded-full border border-paper/30">
+            <span className="mt-1.5 h-1.5 w-1 animate-bounce rounded-full bg-amber" />
+          </span>
+          <span className="eyebrow">Scroll</span>
+        </div>
       </div>
     </section>
+  );
+}
+
+function Stat({
+  value,
+  suffix = "",
+  label,
+}: {
+  value: number;
+  suffix?: string;
+  label: string;
+}) {
+  return (
+    <div>
+      <p className="text-2xl font-semibold tracking-tight">
+        <CountUp end={value} />
+        <span className="text-amber">{suffix}</span>
+      </p>
+      <p className="mt-1 text-sm text-paper/60">{label}</p>
+    </div>
   );
 }

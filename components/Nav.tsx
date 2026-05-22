@@ -27,6 +27,9 @@ export function Nav() {
     };
   }, [open]);
 
+  const onDark = !scrolled && !open;
+  const lineColor = onDark ? "bg-paper" : "bg-ink";
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -35,7 +38,11 @@ export function Nav() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div
+        className={`mx-auto flex max-w-6xl items-center justify-between px-6 py-4 transition-colors ${
+          onDark ? "text-paper" : "text-ink"
+        }`}
+      >
         <a href="#top" aria-label="bauitec — Startseite" className="shrink-0">
           <Logo size="text-xl" />
         </a>
@@ -45,7 +52,11 @@ export function Nav() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-ink/70 transition-colors hover:text-ink"
+              className={`text-sm transition-colors ${
+                onDark
+                  ? "text-paper/75 hover:text-paper"
+                  : "text-ink/70 hover:text-ink"
+              }`}
             >
               {item.label}
             </a>
@@ -68,19 +79,19 @@ export function Nav() {
         >
           <span className="relative block h-4 w-6">
             <span
-              className={`absolute left-0 block h-0.5 w-6 bg-ink transition-all ${
-                open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"
-              }`}
+              className={`absolute left-0 block h-0.5 w-6 transition-all ${
+                lineColor
+              } ${open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"}`}
             />
             <span
-              className={`absolute left-0 top-1/2 block h-0.5 w-6 -translate-y-1/2 bg-ink transition-all ${
-                open ? "opacity-0" : "opacity-100"
-              }`}
+              className={`absolute left-0 top-1/2 block h-0.5 w-6 -translate-y-1/2 transition-all ${
+                lineColor
+              } ${open ? "opacity-0" : "opacity-100"}`}
             />
             <span
-              className={`absolute left-0 block h-0.5 w-6 bg-ink transition-all ${
-                open ? "top-1/2 -translate-y-1/2 -rotate-45" : "bottom-0"
-              }`}
+              className={`absolute left-0 block h-0.5 w-6 transition-all ${
+                lineColor
+              } ${open ? "top-1/2 -translate-y-1/2 -rotate-45" : "bottom-0"}`}
             />
           </span>
         </button>

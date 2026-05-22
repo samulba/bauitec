@@ -27,7 +27,7 @@ export function Services() {
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
             <Reveal key={s.num} delay={(i % 4) * 80} variant="scale">
-              <article className="hover-lift group relative flex h-full flex-col overflow-hidden bg-paper p-7 hover:bg-soft">
+              <article className="group relative flex h-full flex-col overflow-hidden bg-paper p-7 transition-colors duration-300 hover:bg-soft">
                 <span
                   className="absolute right-0 top-0 h-1 w-0 bg-amber transition-all duration-500 group-hover:w-full"
                   aria-hidden
