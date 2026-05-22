@@ -111,13 +111,23 @@ export const process = [
   },
 ];
 
-export const projects = [
+export type Project = {
+  tag: string;
+  title: string;
+  text: string;
+  year: string;
+  duration: string;
+  image?: string;
+};
+
+export const projects: Project[] = [
   {
-    tag: "Sanierung · Bad",
-    title: "Komplettsanierung Bad mit Großformat-Fliesen",
-    text: "Abriss, Estrich neu, XXL-Fliesen, neue Sanitärobjekte. Aus einem 90er-Bad wurde ein modernes Spa in 14 Tagen.",
+    tag: "Sanierung · Wohnhaus",
+    title: "Komplettsanierung Einfamilienhaus",
+    text: "Innen und außen aus einer Hand: neue Böden, Trockenbau, Bäder, Fassade und Außenanlage. Vom unsanierten Bestand zum bezugsfertigen Zuhause.",
     year: "2025",
-    duration: "14 Tage",
+    duration: "4 Monate",
+    image: "/projekt-haus.jpg",
   },
   {
     tag: "Garten · Außenanlage",
@@ -125,6 +135,7 @@ export const projects = [
     text: "180 m² Pflaster, drei Hochbeete, neuer Sichtschutzzaun. Eigene Bagger, drei Wochen, ein Ansprechpartner.",
     year: "2025",
     duration: "3 Wochen",
+    image: "/projekt-garten.jpg",
   },
   {
     tag: "Trockenbau · Büro",
@@ -132,6 +143,7 @@ export const projects = [
     text: "240 m² Trennwände, abgehängte Decken, Akustikplatten. F30-Brandschutz nach DIN — sauber verspachtelt, übergeben.",
     year: "2024",
     duration: "5 Wochen",
+    image: "/projekt-buero.jpg",
   },
 ];
 

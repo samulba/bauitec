@@ -31,9 +31,23 @@ export function Projects() {
               <article className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-line-dark bg-ink-soft hover:border-amber/40">
                 <div className="relative aspect-[4/3] overflow-hidden bg-line-dark">
                   <ParallaxBox speed={0.06} className="absolute inset-[-12%]">
-                    <PlaceholderImage index={i} />
+                    {p.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        loading="lazy"
+                        className="zoom-img h-full w-full object-cover"
+                      />
+                    ) : (
+                      <PlaceholderImage index={i} />
+                    )}
                   </ParallaxBox>
-                  <span className="absolute left-4 top-4 z-10 rounded-full bg-ink/70 px-3 py-1 text-xs font-medium backdrop-blur-sm">
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"
+                    aria-hidden
+                  />
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-ink/70 px-3 py-1 text-xs font-medium text-paper backdrop-blur-sm">
                     {p.tag}
                   </span>
                 </div>
