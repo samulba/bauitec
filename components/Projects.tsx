@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { ParallaxBox } from "./ParallaxBox";
+import { ProjectImage } from "./ProjectImage";
 import { projects } from "@/lib/content";
 
 export function Projects() {
@@ -31,17 +32,7 @@ export function Projects() {
               <article className="hover-lift group flex h-full flex-col overflow-hidden rounded-2xl border border-line-dark bg-ink-soft hover:border-amber/40">
                 <div className="relative aspect-[4/3] overflow-hidden bg-line-dark">
                   <ParallaxBox speed={0.06} className="absolute inset-[-12%]">
-                    {p.image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={p.image}
-                        alt={p.title}
-                        loading="lazy"
-                        className="zoom-img h-full w-full object-cover"
-                      />
-                    ) : (
-                      <PlaceholderImage index={i} />
-                    )}
+                    <ProjectImage src={p.image} alt={p.title} index={i} />
                   </ParallaxBox>
                   <div
                     className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"
@@ -68,39 +59,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  );
-}
-
-function PlaceholderImage({ index }: { index: number }) {
-  return (
-    <svg
-      viewBox="0 0 400 300"
-      className="zoom-img h-full w-full object-cover opacity-90"
-      aria-hidden
-    >
-      <defs>
-        <linearGradient id={`grad-${index}`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#1f1b16" />
-          <stop offset="100%" stopColor="#14110e" />
-        </linearGradient>
-      </defs>
-      <rect width="400" height="300" fill={`url(#grad-${index})`} />
-      <g stroke="#d98324" strokeWidth="1.2" opacity="0.25" fill="none">
-        {Array.from({ length: 9 }).map((_, r) => (
-          <line key={r} x1="0" y1={r * 38} x2="400" y2={r * 38 - 80} />
-        ))}
-      </g>
-      <text
-        x="200"
-        y="158"
-        textAnchor="middle"
-        fontFamily="monospace"
-        fontSize="13"
-        letterSpacing="2"
-        fill="#a8a29e"
-      >
-        FOTO FOLGT
-      </text>
-    </svg>
   );
 }

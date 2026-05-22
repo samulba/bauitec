@@ -5,15 +5,15 @@ import { Reveal } from "./Reveal";
 import { CountUp } from "./CountUp";
 
 export function Hero() {
-  const monoRef = useRef<HTMLSpanElement | null>(null);
+  const planRef = useRef<HTMLDivElement | null>(null);
   const glowRef = useRef<HTMLDivElement | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const mono = monoRef.current;
+    const plan = planRef.current;
     const glow = glowRef.current;
     const section = sectionRef.current;
-    if (!mono || !section) return;
+    if (!plan || !section) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let raf = 0;
@@ -23,7 +23,7 @@ export function Hero() {
 
     const apply = () => {
       raf = 0;
-      mono.style.transform = `translate3d(${mx}px, ${my + sy}px, 0)`;
+      plan.style.transform = `translate3d(${mx}px, ${my + sy}px, 0)`;
       if (glow) glow.style.transform = `translate3d(${mx * -0.6}px, ${my * -0.6}px, 0)`;
     };
     const schedule = () => {
@@ -65,14 +65,14 @@ export function Hero() {
         className="pointer-events-none absolute -right-40 -top-20 h-[42rem] w-[42rem] rounded-full bg-amber/20 blur-[120px]"
         aria-hidden
       />
-      {/* Parallax B monogram */}
-      <span
-        ref={monoRef}
+      {/* Parallax blueprint floor plan */}
+      <div
+        ref={planRef}
         aria-hidden
-        className="serif-italic pointer-events-none absolute -right-16 top-1/2 hidden -translate-y-1/2 select-none text-[40rem] leading-none text-amber/[0.14] lg:block"
+        className="pointer-events-none absolute -right-24 top-1/2 hidden w-[40rem] -translate-y-1/2 select-none lg:block xl:right-0"
       >
-        B
-      </span>
+        <FloorPlan />
+      </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-6">
         {/* Availability pill */}
@@ -93,7 +93,12 @@ export function Hero() {
             Wir bauen,
           </Reveal>
           <Reveal delay={170} as="span" className="block">
-            <span className="mark">was&nbsp;bleibt.</span>
+            <span className="relative inline-block">
+              <span className="px-2 text-paper">was&nbsp;bleibt.</span>
+              <span className="mark-wipe absolute inset-0 flex items-center bg-amber px-2 text-ink">
+                was&nbsp;bleibt.
+              </span>
+            </span>
           </Reveal>
           <Reveal delay={260} as="span" variant="left" className="block">
             <span className="serif-italic text-stone-light">
@@ -181,5 +186,55 @@ function Stat({
       </p>
       <p className="mt-1 text-sm text-paper/60">{label}</p>
     </div>
+  );
+}
+
+function FloorPlan() {
+  return (
+    <svg
+      viewBox="0 0 520 460"
+      fill="none"
+      className="draw-plan h-auto w-full text-amber"
+      stroke="currentColor"
+      strokeWidth={1.6}
+    >
+      <g opacity={0.28} strokeLinecap="round">
+        {/* Dimension line (top) */}
+        <line x1="80" y1="44" x2="440" y2="44" strokeWidth={1} />
+        <line x1="80" y1="36" x2="80" y2="52" strokeWidth={1} />
+        <line x1="260" y1="36" x2="260" y2="52" strokeWidth={1} />
+        <line x1="440" y1="36" x2="440" y2="52" strokeWidth={1} />
+
+        {/* Outer walls */}
+        <rect x="80" y="80" width="360" height="300" />
+        {/* Inner walls */}
+        <line x1="260" y1="80" x2="260" y2="240" />
+        <line x1="260" y1="240" x2="440" y2="240" />
+        <line x1="80" y1="240" x2="180" y2="240" />
+
+        {/* Door swing (arc) */}
+        <path d="M180 240 A60 60 0 0 1 180 300" />
+        <line x1="180" y1="240" x2="180" y2="300" />
+
+        {/* Window marks */}
+        <line x1="120" y1="80" x2="200" y2="80" strokeWidth={3} />
+        <line x1="320" y1="380" x2="400" y2="380" strokeWidth={3} />
+
+        {/* Stair hatching */}
+        <g strokeWidth={1}>
+          <rect x="300" y="280" width="110" height="80" />
+          <line x1="300" y1="296" x2="410" y2="296" />
+          <line x1="300" y1="312" x2="410" y2="312" />
+          <line x1="300" y1="328" x2="410" y2="328" />
+          <line x1="300" y1="344" x2="410" y2="344" />
+        </g>
+      </g>
+
+      {/* Corner registration marks */}
+      <g opacity={0.4} strokeWidth={1.2}>
+        <path d="M64 80 h-16 M64 80 v-16" />
+        <path d="M456 80 h16 M456 80 v-16" />
+      </g>
+    </svg>
   );
 }

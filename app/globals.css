@@ -98,6 +98,31 @@ body {
   transform: none;
 }
 
+/* ---- Highlight wipe (hero) ---- */
+@keyframes wipe-in {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.mark-wipe {
+  clip-path: inset(0 100% 0 0);
+  animation: wipe-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+}
+
+/* ---- Draw blueprint stroke ---- */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.draw-plan path,
+.draw-plan rect,
+.draw-plan line {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: draw 3.5s ease forwards 0.3s;
+}
+
 /* ---- Blueprint grid background ---- */
 .blueprint {
   background-image:
@@ -176,5 +201,15 @@ body {
   .underline-draw {
     background-size: 100% 0.18em;
     transition: none;
+  }
+  .mark-wipe {
+    clip-path: inset(0 0 0 0);
+    animation: none;
+  }
+  .draw-plan path,
+  .draw-plan rect,
+  .draw-plan line {
+    stroke-dashoffset: 0;
+    animation: none;
   }
 }
