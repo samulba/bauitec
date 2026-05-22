@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14110e;
+  --color-ink-soft: #1f1b16;
+  --color-paper: #faf8f3;
+  --color-soft: #f1ece2;
+  --color-amber: #d98324;
+  --color-amber-soft: #f0b86e;
+  --color-stone: #78716c;
+  --color-stone-light: #a8a29e;
+  --color-line: #e3ddd1;
+  --color-line-dark: #2c261f;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-ink);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.mark {
+  background: var(--color-amber);
+  color: var(--color-ink);
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.underline-amber {
+  background-image: linear-gradient(var(--color-amber), var(--color-amber));
+  background-position: 0 92%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.16em;
+  padding-bottom: 0.02em;
+}
+
+.serif-italic {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.in {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal.in {
+    opacity: 1;
+    animation: none;
+  }
+}

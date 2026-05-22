@@ -1,0 +1,89 @@
+import { Reveal } from "./Reveal";
+import { projects } from "@/lib/content";
+
+export function Projects() {
+  return (
+    <section id="projekte" className="bg-ink text-paper">
+      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
+          <Reveal>
+            <div>
+              <p className="eyebrow text-stone-light">
+                04 — <span className="text-amber">Ausgewählte Projekte</span>
+              </p>
+              <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+                Gebaut. <span className="underline-amber">Übergeben.</span>
+              </h2>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-base leading-relaxed text-paper/60 md:text-right md:ml-auto md:max-w-sm">
+              Eine kleine Auswahl aus den letzten 24 Monaten. Mehr Referenzen
+              und Details auf Anfrage.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {projects.map((p, i) => (
+            <Reveal key={p.title} delay={i * 90}>
+              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line-dark bg-ink-soft">
+                <div className="relative aspect-[4/3] overflow-hidden bg-line-dark">
+                  <PlaceholderImage index={i} />
+                  <span className="absolute left-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-medium backdrop-blur-sm">
+                    {p.tag}
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-lg font-semibold leading-snug tracking-tight">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-paper/60">
+                    {p.text}
+                  </p>
+                  <p className="eyebrow mt-6 text-stone-light">
+                    {p.year} · {p.duration}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PlaceholderImage({ index }: { index: number }) {
+  return (
+    <svg
+      viewBox="0 0 400 300"
+      className="h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+      aria-hidden
+    >
+      <defs>
+        <linearGradient id={`grad-${index}`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#1f1b16" />
+          <stop offset="100%" stopColor="#14110e" />
+        </linearGradient>
+      </defs>
+      <rect width="400" height="300" fill={`url(#grad-${index})`} />
+      <g stroke="#d98324" strokeWidth="1.2" opacity="0.25" fill="none">
+        {Array.from({ length: 9 }).map((_, r) => (
+          <line key={r} x1="0" y1={r * 38} x2="400" y2={r * 38 - 80} />
+        ))}
+      </g>
+      <text
+        x="200"
+        y="158"
+        textAnchor="middle"
+        fontFamily="monospace"
+        fontSize="13"
+        letterSpacing="2"
+        fill="#a8a29e"
+      >
+        FOTO FOLGT
+      </text>
+    </svg>
+  );
+}
