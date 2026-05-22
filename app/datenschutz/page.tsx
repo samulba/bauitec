@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LegalHeader } from "@/components/LegalHeader";
+import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default function DatenschutzPage() {
   return (
     <>
-      <LegalHeader />
+      <Nav solid />
       <main className="flex-1 bg-paper">
-        <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+        <article className="mx-auto max-w-3xl px-6 pt-32 pb-16 md:pt-40 md:pb-24">
           <p className="eyebrow text-stone">Rechtliches</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight">
             Datenschutzerklärung

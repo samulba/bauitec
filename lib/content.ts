@@ -8,10 +8,10 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Leistungen", href: "#leistungen" },
-  { label: "Prozess", href: "#prozess" },
-  { label: "Projekte", href: "#projekte" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Leistungen", href: "/#leistungen" },
+  { label: "Prozess", href: "/#prozess" },
+  { label: "Projekte", href: "/#projekte" },
+  { label: "Kontakt", href: "/#kontakt" },
 ];
 
 export type Service = {

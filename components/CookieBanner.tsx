@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { OPEN_COOKIE_SETTINGS } from "./CookieSettingsButton";
 
 const STORAGE_KEY = "bauitec-cookie-consent";
 
@@ -23,6 +24,23 @@ export function CookieBanner() {
     } catch {
       setVisible(true);
     }
+
+    const reopen = () => {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const c = JSON.parse(raw);
+          setStatistics(!!c.statistics);
+          setMarketing(!!c.marketing);
+        }
+      } catch {
+        /* ignore */
+      }
+      setShowSettings(true);
+      setVisible(true);
+    };
+    window.addEventListener(OPEN_COOKIE_SETTINGS, reopen);
+    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS, reopen);
   }, []);
 
   const save = (consent: Omit<Consent, "necessary" | "ts">) => {

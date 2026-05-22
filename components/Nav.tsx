@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { nav } from "@/lib/content";
 
-export function Nav() {
+export function Nav({ solid = false }: { solid?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -27,23 +27,24 @@ export function Nav() {
     };
   }, [open]);
 
-  const onDark = !scrolled && !open;
+  const filled = solid || scrolled || open;
+  const onDark = !filled;
   const lineColor = onDark ? "bg-paper" : "bg-ink";
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+        filled
           ? "bg-paper/85 backdrop-blur-md border-b border-line"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <div
-        className={`mx-auto flex max-w-6xl items-center justify-between px-6 py-4 transition-colors ${
+        className={`mx-auto flex max-w-[1680px] items-center justify-between px-6 py-4 transition-colors lg:px-12 ${
           onDark ? "text-paper" : "text-ink"
         }`}
       >
-        <a href="#top" aria-label="bauitec — Startseite" className="shrink-0">
+        <a href="/" aria-label="bauitec — Startseite" className="shrink-0">
           <Logo size="text-xl" />
         </a>
 
@@ -64,7 +65,7 @@ export function Nav() {
         </nav>
 
         <a
-          href="#kontakt"
+          href="/#kontakt"
           className="hidden rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5 md:inline-flex"
         >
           Anfrage senden →
@@ -110,7 +111,7 @@ export function Nav() {
           open ? "max-h-96 border-b border-line bg-paper" : "max-h-0"
         }`}
       >
-        <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-6 pb-6 pt-2">
+        <nav className="mx-auto flex max-w-[1680px] flex-col gap-1 px-6 pb-6 pt-2 lg:px-12">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -122,7 +123,7 @@ export function Nav() {
             </a>
           ))}
           <a
-            href="#kontakt"
+            href="/#kontakt"
             onClick={() => setOpen(false)}
             className="mt-4 inline-flex justify-center rounded-full bg-amber px-5 py-3 text-base font-medium text-ink"
           >

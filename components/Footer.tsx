@@ -1,4 +1,5 @@
 import { Logo } from "./Logo";
+import { CookieSettingsButton } from "./CookieSettingsButton";
 import { site } from "@/lib/content";
 
 const columns = [
@@ -21,7 +22,7 @@ const columns = [
 export function Footer() {
   return (
     <footer className="bg-ink text-paper">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-[1680px] px-6 py-16 md:py-20 lg:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
             <Logo size="text-3xl" />
@@ -67,13 +68,14 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-line-dark pt-8 text-sm text-paper/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} bauitec · Inh. [Name] · Poing bei München</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <a href="/impressum" className="transition-colors hover:text-paper">
               Impressum
             </a>
             <a href="/datenschutz" className="transition-colors hover:text-paper">
               Datenschutz
             </a>
+            <CookieSettingsButton className="transition-colors hover:text-paper" />
           </div>
         </div>
       </div>
