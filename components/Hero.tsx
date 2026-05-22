@@ -65,75 +65,76 @@ export function Hero() {
         className="pointer-events-none absolute -right-40 -top-20 h-[42rem] w-[42rem] rounded-full bg-amber/20 blur-[120px]"
         aria-hidden
       />
-      {/* Parallax blueprint floor plan — anchored to the centered content */}
-      <div className="pointer-events-none absolute inset-0 hidden select-none lg:block" aria-hidden>
-        <div className="relative mx-auto h-full max-w-6xl px-6">
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 xl:-right-12">
-            <div ref={planRef} className="w-[34rem] xl:w-[40rem]">
+      <div className="relative mx-auto w-full max-w-6xl px-6">
+        <div className="grid items-center gap-10 xl:grid-cols-[1.12fr_0.88fr]">
+          {/* Left: content */}
+          <div>
+            {/* Availability pill */}
+            <Reveal>
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-line-dark bg-ink-soft/60 px-4 py-2 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-amber" />
+                </span>
+                <span className="eyebrow text-paper/80">
+                  Poing bei München · Erstgespräch kostenlos
+                </span>
+              </div>
+            </Reveal>
+
+            <h1 className="mt-8 text-[3.25rem] font-semibold leading-[0.92] tracking-tight sm:text-7xl md:text-8xl xl:text-[4.25rem] 2xl:text-7xl">
+              <Reveal delay={80} as="span" className="block">
+                Wir bauen,
+              </Reveal>
+              <Reveal delay={170} as="span" className="block">
+                <span className="relative inline-block">
+                  <span className="px-2 text-paper">was&nbsp;bleibt.</span>
+                  <span className="mark-wipe absolute inset-0 flex items-center bg-amber px-2 text-ink">
+                    was&nbsp;bleibt.
+                  </span>
+                </span>
+              </Reveal>
+              <Reveal delay={260} as="span" variant="left" className="block">
+                <span className="serif-italic text-stone-light">
+                  nicht das Versprechen.
+                </span>
+              </Reveal>
+            </h1>
+
+            <Reveal delay={360}>
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-paper/70">
+                Sanierung, Innenausbau, Beton- und Gartenarbeiten — vom ersten
+                Aushub bis zur Abnahme. In einer Hand. Mit eigenem Team. In
+                Poing bei München.
+              </p>
+            </Reveal>
+
+            <Reveal delay={440}>
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <a
+                  href="#kontakt"
+                  className="group relative overflow-hidden rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
+                >
+                  <span className="relative z-10">Projekt anfragen →</span>
+                  <span className="absolute inset-0 -translate-x-full bg-paper/20 transition-transform duration-500 group-hover:translate-x-0" />
+                </a>
+                <a
+                  href="#leistungen"
+                  className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium text-paper transition-colors hover:border-paper/60 hover:bg-paper/5"
+                >
+                  Leistungen ansehen
+                </a>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right: blueprint floor plan */}
+          <div className="hidden select-none xl:block" aria-hidden>
+            <div ref={planRef} className="mx-auto w-full max-w-[34rem]">
               <FloorPlan />
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="relative mx-auto w-full max-w-6xl px-6">
-        {/* Availability pill */}
-        <Reveal>
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-line-dark bg-ink-soft/60 px-4 py-2 backdrop-blur-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber" />
-            </span>
-            <span className="eyebrow text-paper/80">
-              Poing bei München · Erstgespräch kostenlos
-            </span>
-          </div>
-        </Reveal>
-
-        <h1 className="mt-8 text-[3.25rem] font-semibold leading-[0.92] tracking-tight sm:text-7xl md:text-8xl">
-          <Reveal delay={80} as="span" className="block">
-            Wir bauen,
-          </Reveal>
-          <Reveal delay={170} as="span" className="block">
-            <span className="relative inline-block">
-              <span className="px-2 text-paper">was&nbsp;bleibt.</span>
-              <span className="mark-wipe absolute inset-0 flex items-center bg-amber px-2 text-ink">
-                was&nbsp;bleibt.
-              </span>
-            </span>
-          </Reveal>
-          <Reveal delay={260} as="span" variant="left" className="block">
-            <span className="serif-italic text-stone-light">
-              nicht das Versprechen.
-            </span>
-          </Reveal>
-        </h1>
-
-        <Reveal delay={360}>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-paper/70">
-            Sanierung, Innenausbau, Beton- und Gartenarbeiten — vom ersten
-            Aushub bis zur Abnahme. In einer Hand. Mit eigenem Team. In Poing
-            bei München.
-          </p>
-        </Reveal>
-
-        <Reveal delay={440}>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#kontakt"
-              className="group relative overflow-hidden rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
-            >
-              <span className="relative z-10">Projekt anfragen →</span>
-              <span className="absolute inset-0 -translate-x-full bg-paper/20 transition-transform duration-500 group-hover:translate-x-0" />
-            </a>
-            <a
-              href="#leistungen"
-              className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium text-paper transition-colors hover:border-paper/60 hover:bg-paper/5"
-            >
-              Leistungen ansehen
-            </a>
-          </div>
-        </Reveal>
 
         {/* Trust / stats strip */}
         <Reveal delay={560}>
