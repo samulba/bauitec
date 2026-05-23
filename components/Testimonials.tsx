@@ -19,23 +19,19 @@ function initials(name: string) {
 
 export function Testimonials() {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
   const total = testimonials.length;
 
   useEffect(() => {
-    if (paused) return;
     const id = setTimeout(() => setActive((a) => (a + 1) % total), DURATION);
     return () => clearTimeout(id);
-  }, [active, paused, total]);
+  }, [active, total]);
 
   const t = testimonials[active];
 
   return (
     <section
       id="referenzen"
-      className="relative overflow-hidden bg-ink py-20 text-paper md:py-28"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      className="relative overflow-hidden bg-ink py-16 text-paper md:py-28"
     >
       {/* Blueprint + glow */}
       <div
@@ -43,16 +39,9 @@ export function Testimonials() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-amber/15 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-amber/15 blur-[120px]"
         aria-hidden
       />
-      {/* Giant quote glyph */}
-      <span
-        className="serif-italic pointer-events-none absolute left-1/2 top-24 -translate-x-1/2 select-none text-[16rem] leading-none text-amber/10 md:text-[22rem]"
-        aria-hidden
-      >
-        ”
-      </span>
 
       <div className="relative mx-auto max-w-5xl px-6">
         <div className="flex flex-col items-center text-center">
@@ -61,19 +50,21 @@ export function Testimonials() {
           </Reveal>
 
           {/* Rotating quote */}
-          <div className="mt-8 flex min-h-[16rem] flex-col items-center justify-center md:min-h-[18rem]">
+          <div className="mt-7 flex min-h-[15rem] flex-col items-center justify-center sm:min-h-[16rem] md:mt-10 md:min-h-[18rem]">
             <div key={active} className="quote-in flex flex-col items-center">
-              <div className="flex gap-1 text-lg text-amber" aria-hidden>
+              <div className="flex gap-1 text-base text-amber sm:text-lg" aria-hidden>
                 {"★★★★★".split("").map((s, i) => (
                   <span key={i}>{s}</span>
                 ))}
               </div>
-              <blockquote className="mt-6 max-w-3xl text-2xl font-medium leading-snug tracking-tight sm:text-3xl md:text-[2.6rem] md:leading-[1.15]">
-                „{t.quote}"
+              <blockquote className="mt-6 max-w-3xl text-[1.6rem] font-medium leading-snug tracking-tight sm:text-3xl md:text-[2.5rem] md:leading-[1.15]">
+                <span className="serif-italic text-amber">„</span>
+                {t.quote}
+                <span className="serif-italic text-amber">"</span>
               </blockquote>
-              <figcaption className="mt-7 flex items-center gap-3 text-sm">
+              <figcaption className="mt-7 flex flex-col items-center gap-1 text-sm sm:flex-row sm:gap-3">
                 <span className="font-medium text-paper">{t.name}</span>
-                <span className="h-1 w-1 rounded-full bg-amber" />
+                <span className="hidden h-1 w-1 rounded-full bg-amber sm:block" />
                 <span className="eyebrow text-stone-light">
                   {t.project} · {t.date}
                 </span>
@@ -82,7 +73,7 @@ export function Testimonials() {
           </div>
 
           {/* Avatar selector */}
-          <div className="mt-10 flex items-center justify-center gap-3 sm:gap-4">
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3 md:mt-10 md:gap-4">
             {testimonials.map((rev, i) => {
               const isActive = i === active;
               return (
@@ -98,12 +89,13 @@ export function Testimonials() {
                   }`}
                 >
                   {initials(rev.name)}
-                  {isActive && !paused && (
+                  {isActive && (
                     <span
-                      className="pointer-events-none absolute -bottom-3 left-0 h-0.5 w-full overflow-hidden rounded-full"
+                      className="pointer-events-none absolute -bottom-2.5 left-0 h-0.5 w-full overflow-hidden rounded-full bg-line-dark"
                       aria-hidden
                     >
                       <span
+                        key={active}
                         className="progress-fill block h-full w-full bg-amber"
                         style={{ animationDuration: `${DURATION}ms` }}
                       />
@@ -127,9 +119,7 @@ export function Testimonials() {
                   <span key={i}>{s}</span>
                 ))}
               </span>
-              <span className="text-sm text-paper/70">
-                {myHammer.label}
-              </span>
+              <span className="text-sm text-paper/70">{myHammer.label}</span>
               <span className="text-amber transition-transform group-hover:translate-x-0.5">
                 →
               </span>
