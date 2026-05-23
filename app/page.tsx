@@ -6,6 +6,7 @@ import { Marquee } from "@/components/Marquee";
 import { Numbers } from "@/components/Numbers";
 import { Process } from "@/components/Process";
 import { Projects } from "@/components/Projects";
+import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <Numbers />
         <Process />
         <Projects />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

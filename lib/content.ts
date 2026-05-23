@@ -11,6 +11,7 @@ export const nav = [
   { label: "Leistungen", href: "/#leistungen" },
   { label: "Prozess", href: "/#prozess" },
   { label: "Projekte", href: "/#projekte" },
+  { label: "Referenzen", href: "/#referenzen" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 
@@ -144,6 +145,45 @@ export const projects: Project[] = [
     year: "2024",
     duration: "5 Wochen",
     image: "/projekt-buero.jpg",
+  },
+];
+
+export const myHammer = {
+  url: "https://www.my-hammer.de/auftragnehmer/bauitec-gmbh",
+  rating: "5,0", // PLATZHALTER – echten Schnitt von MyHammer eintragen
+  count: "Top-Bewertungen", // z. B. "27 Bewertungen"
+};
+
+// PLATZHALTER – bitte durch die echten MyHammer-Bewertungen ersetzen
+// (Text, Vorname/Initiale, Art des Projekts, Datum).
+export type Testimonial = {
+  quote: string;
+  name: string;
+  project: string;
+  date: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Saubere, schnelle Arbeit und ein fairer Festpreis. Vom ersten Termin bis zur Übergabe alles aus einer Hand — absolut empfehlenswert.",
+    name: "Michael K.",
+    project: "Komplettsanierung",
+    date: "2025",
+  },
+  {
+    quote:
+      "Top Kommunikation, immer erreichbar und pünktlich fertig geworden. Das Ergebnis hat unsere Erwartungen übertroffen.",
+    name: "Sandra B.",
+    project: "Bad & Fliesen",
+    date: "2025",
+  },
+  {
+    quote:
+      "Eigenes Team, eigene Geräte, kein Chaos auf der Baustelle. Endlich eine Firma, die hält, was sie verspricht.",
+    name: "Thomas R.",
+    project: "Außenanlage",
+    date: "2024",
   },
 ];
 
