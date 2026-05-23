@@ -7,7 +7,7 @@ import { site, serviceOptions } from "@/lib/content";
 // Einsendungen, gratis). Hol dir einen Access Key auf https://web3forms.com
 // (nur E-Mail nötig, kein Konto/Telefon) und trage ihn hier ein.
 // Solange der Key leer ist, öffnet das Formular ersatzweise das E-Mail-Programm.
-const WEB3FORMS_ACCESS_KEY = "";
+const WEB3FORMS_ACCESS_KEY = "675be533-f77d-47cf-9817-c730a80f9273";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
@@ -82,6 +82,14 @@ export function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
+          <input
+            type="checkbox"
+            name="botcheck"
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
           <Field label="Name" name="name" required />
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <Field label="Telefon" name="telefon" type="tel" />
