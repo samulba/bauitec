@@ -1,97 +1,141 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Reveal } from "./Reveal";
 import { testimonials, myHammer } from "@/lib/content";
 
-function Stars() {
-  return (
-    <div className="flex gap-0.5 text-amber" aria-hidden>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i}>★</span>
-      ))}
-    </div>
-  );
+const DURATION = 6000;
+
+function initials(name: string) {
+  return name
+    .split(",")[0]
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase();
 }
 
 export function Testimonials() {
-  const loop = [...testimonials, ...testimonials];
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const total = testimonials.length;
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setTimeout(() => setActive((a) => (a + 1) % total), DURATION);
+    return () => clearTimeout(id);
+  }, [active, paused, total]);
+
+  const t = testimonials[active];
 
   return (
-    <section id="referenzen" className="overflow-hidden bg-soft py-16 md:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
+    <section
+      id="referenzen"
+      className="relative overflow-hidden bg-ink py-20 text-paper md:py-28"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Blueprint + glow */}
+      <div
+        className="blueprint pointer-events-none absolute inset-0 text-amber opacity-40 [mask-image:radial-gradient(80%_70%_at_50%_30%,black,transparent)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-amber/15 blur-[120px]"
+        aria-hidden
+      />
+      {/* Giant quote glyph */}
+      <span
+        className="serif-italic pointer-events-none absolute left-1/2 top-24 -translate-x-1/2 select-none text-[16rem] leading-none text-amber/10 md:text-[22rem]"
+        aria-hidden
+      >
+        ”
+      </span>
+
+      <div className="relative mx-auto max-w-5xl px-6">
+        <div className="flex flex-col items-center text-center">
           <Reveal>
-            <div>
-              <p className="eyebrow text-stone">— Referenzen</p>
-              <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
-                Was unsere Kunden{" "}
-                <span className="underline-amber">sagen</span>.
-              </h2>
-            </div>
+            <p className="eyebrow text-amber">— Referenzen</p>
           </Reveal>
 
-          <Reveal delay={100} variant="right">
+          {/* Rotating quote */}
+          <div className="mt-8 flex min-h-[16rem] flex-col items-center justify-center md:min-h-[18rem]">
+            <div key={active} className="quote-in flex flex-col items-center">
+              <div className="flex gap-1 text-lg text-amber" aria-hidden>
+                {"★★★★★".split("").map((s, i) => (
+                  <span key={i}>{s}</span>
+                ))}
+              </div>
+              <blockquote className="mt-6 max-w-3xl text-2xl font-medium leading-snug tracking-tight sm:text-3xl md:text-[2.6rem] md:leading-[1.15]">
+                „{t.quote}"
+              </blockquote>
+              <figcaption className="mt-7 flex items-center gap-3 text-sm">
+                <span className="font-medium text-paper">{t.name}</span>
+                <span className="h-1 w-1 rounded-full bg-amber" />
+                <span className="eyebrow text-stone-light">
+                  {t.project} · {t.date}
+                </span>
+              </figcaption>
+            </div>
+          </div>
+
+          {/* Avatar selector */}
+          <div className="mt-10 flex items-center justify-center gap-3 sm:gap-4">
+            {testimonials.map((rev, i) => {
+              const isActive = i === active;
+              return (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`Bewertung von ${rev.name}`}
+                  className={`relative flex h-11 w-11 items-center justify-center rounded-full border text-xs font-semibold tracking-wide transition-all duration-300 sm:h-12 sm:w-12 ${
+                    isActive
+                      ? "scale-110 border-amber bg-amber text-ink"
+                      : "border-line-dark bg-ink-soft text-paper/60 hover:border-paper/40 hover:text-paper"
+                  }`}
+                >
+                  {initials(rev.name)}
+                  {isActive && !paused && (
+                    <span
+                      className="pointer-events-none absolute -bottom-3 left-0 h-0.5 w-full overflow-hidden rounded-full"
+                      aria-hidden
+                    >
+                      <span
+                        className="progress-fill block h-full w-full bg-amber"
+                        style={{ animationDuration: `${DURATION}ms` }}
+                      />
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* MyHammer badge */}
+          <Reveal delay={120}>
             <a
               href={myHammer.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover-lift group ml-auto flex items-center gap-4 rounded-2xl border border-line bg-paper p-5 md:w-fit"
+              className="group mt-12 inline-flex items-center gap-3 rounded-full border border-line-dark bg-ink-soft/60 px-5 py-3 backdrop-blur-sm transition-colors hover:border-amber/50"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ink text-lg font-semibold text-amber">
-                ★
+              <span className="flex gap-0.5 text-amber" aria-hidden>
+                {"★★★★★".split("").map((s, i) => (
+                  <span key={i}>{s}</span>
+                ))}
               </span>
-              <span>
-                <Stars />
-                <span className="mt-1 block text-sm text-ink/60">
-                  {myHammer.label}{" "}
-                  <span className="text-amber transition-transform group-hover:translate-x-0.5">
-                    →
-                  </span>
-                </span>
+              <span className="text-sm text-paper/70">
+                {myHammer.label}
+              </span>
+              <span className="text-amber transition-transform group-hover:translate-x-0.5">
+                →
               </span>
             </a>
           </Reveal>
         </div>
-      </div>
-
-      {/* Infinite marquee of reviews */}
-      <div className="marquee mt-12 md:mt-16">
-        <div className="marquee-track py-2" style={{ animationDuration: "55s" }}>
-          {loop.map((t, i) => (
-            <figure
-              key={i}
-              className="relative mr-5 flex w-[300px] shrink-0 flex-col whitespace-normal rounded-2xl border border-line bg-paper p-6 shadow-sm shadow-ink/5 transition-colors duration-300 hover:border-amber/50 sm:w-[360px]"
-            >
-              <span
-                className="serif-italic pointer-events-none absolute right-5 top-1 select-none text-6xl leading-none text-amber/15"
-                aria-hidden
-              >
-                ”
-              </span>
-              <Stars />
-              <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-ink/80">
-                {t.quote}
-              </blockquote>
-              <figcaption className="mt-6 border-t border-line pt-4">
-                <span className="block text-sm font-medium text-ink">
-                  {t.name}
-                </span>
-                <span className="eyebrow mt-1 block text-stone">
-                  {t.project} · {t.date}
-                </span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-
-      <div className="mx-auto mt-12 max-w-6xl px-6 text-center">
-        <a
-          href={myHammer.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink/50 hover:bg-ink/[0.03]"
-        >
-          Alle Bewertungen auf MyHammer ansehen →
-        </a>
       </div>
     </section>
   );

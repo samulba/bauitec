@@ -47,7 +47,7 @@ export default function ImpressumPage() {
           </Section>
 
           <Section title="Vertreten durch">
-            <p>[Vor- und Nachname der Geschäftsführer]</p>
+            <p>[Vorname] Gashi</p>
           </Section>
 
           <Section title="Kontakt">
@@ -71,7 +71,7 @@ export default function ImpressumPage() {
 
           <Section title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
             <p>
-              [Vor- und Nachname der Geschäftsführer]
+              [Vorname] Gashi
               <br />
               Carl-Spitzweg-Platz 5, 85586 Poing
             </p>

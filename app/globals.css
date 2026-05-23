@@ -98,6 +98,42 @@ body {
   transform: none;
 }
 
+/* ---- Testimonial quote swap + progress ---- */
+@keyframes quote-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.quote-in {
+  animation: quote-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.progress-fill {
+  transform-origin: left;
+  animation: progress-fill linear both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .quote-in {
+    animation: none;
+  }
+  .progress-fill {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
 /* ---- Form success animation ---- */
 @keyframes success-pop {
   0% {
