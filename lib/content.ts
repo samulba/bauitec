@@ -150,12 +150,10 @@ export const projects: Project[] = [
 
 export const myHammer = {
   url: "https://www.my-hammer.de/auftragnehmer/bauitec-gmbh",
-  rating: "5,0", // PLATZHALTER – echten Schnitt von MyHammer eintragen
-  count: "Top-Bewertungen", // z. B. "27 Bewertungen"
+  label: "Echte Bewertungen auf MyHammer",
 };
 
-// PLATZHALTER – bitte durch die echten MyHammer-Bewertungen ersetzen
-// (Text, Vorname/Initiale, Art des Projekts, Datum).
+// Echte MyHammer-Bewertungen (übernommen vom MyHammer-Profil).
 export type Testimonial = {
   quote: string;
   name: string;
@@ -166,24 +164,24 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Saubere, schnelle Arbeit und ein fairer Festpreis. Vom ersten Termin bis zur Übergabe alles aus einer Hand — absolut empfehlenswert.",
-    name: "Michael K.",
-    project: "Komplettsanierung",
-    date: "2025",
+      "Absolut zu empfehlen. Sehr freundlich, zuverlässig, absolut professionell und sorgfältig. Vielen Dank für die tolle Arbeit!",
+    name: "Laura Ebert, München",
+    project: "Entrümpelung",
+    date: "Nov 2024",
   },
   {
     quote:
-      "Top Kommunikation, immer erreichbar und pünktlich fertig geworden. Das Ergebnis hat unsere Erwartungen übertroffen.",
-    name: "Sandra B.",
-    project: "Bad & Fliesen",
-    date: "2025",
+      "Alles prima — der Kontakt kam schnell zu Stande, die Besichtigung war nett, und die Ausführung schnell und professionell. Gerne wieder!",
+    name: "Adrian, Wolfratshausen",
+    project: "Entsorgung",
+    date: "Mai 2026",
   },
   {
     quote:
-      "Eigenes Team, eigene Geräte, kein Chaos auf der Baustelle. Endlich eine Firma, die hält, was sie verspricht.",
-    name: "Thomas R.",
-    project: "Außenanlage",
-    date: "2024",
+      "Schnelle und saubere Umsetzung, alles wie besprochen. Ich bin zufrieden.",
+    name: "Haider Hassan, Kirchheim",
+    project: "Entsorgung",
+    date: "Mai 2026",
   },
 ];
 

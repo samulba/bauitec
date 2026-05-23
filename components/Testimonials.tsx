@@ -38,14 +38,9 @@ export function Testimonials() {
                 ★
               </span>
               <span>
-                <span className="flex items-baseline gap-2">
-                  <span className="text-2xl font-semibold tracking-tight">
-                    {myHammer.rating}
-                  </span>
-                  <Stars />
-                </span>
-                <span className="mt-0.5 block text-sm text-ink/60">
-                  {myHammer.count} auf MyHammer{" "}
+                <Stars />
+                <span className="mt-1 block text-sm text-ink/60">
+                  {myHammer.label}{" "}
                   <span className="text-amber transition-transform group-hover:translate-x-0.5">
                     →
                   </span>
@@ -69,9 +64,11 @@ export function Testimonials() {
                 <blockquote className="mt-4 flex-1 text-base leading-relaxed text-ink/80">
                   {t.quote}
                 </blockquote>
-                <figcaption className="mt-6 flex items-center justify-between gap-3 border-t border-line pt-5">
-                  <span className="text-sm font-medium text-ink">{t.name}</span>
-                  <span className="eyebrow shrink-0 text-right text-stone">
+                <figcaption className="mt-6 border-t border-line pt-5">
+                  <span className="block text-sm font-medium text-ink">
+                    {t.name}
+                  </span>
+                  <span className="eyebrow mt-1 block text-stone">
                     {t.project} · {t.date}
                   </span>
                 </figcaption>
