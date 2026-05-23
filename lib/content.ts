@@ -186,7 +186,7 @@ export const projects: Project[] = [
     text: "Innen und außen aus einer Hand: neue Böden, Trockenbau, Bäder, Fassade und Außenanlage. Vom unsanierten Bestand zum bezugsfertigen Zuhause.",
     year: "2025",
     duration: "4 Monate",
-    image: "/projekt-haus.jpg",
+    image: "/projekt-haus.webp",
   },
   {
     tag: "Garten · Außenanlage",
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     text: "180 m² Pflaster, drei Hochbeete, neuer Sichtschutzzaun. Eigene Bagger, drei Wochen, ein Ansprechpartner.",
     year: "2025",
     duration: "3 Wochen",
-    image: "/projekt-garten.jpg",
+    image: "/projekt-garten.webp",
   },
   {
     tag: "Trockenbau · Büro",
@@ -202,7 +202,7 @@ export const projects: Project[] = [
     text: "240 m² Trennwände, abgehängte Decken, Akustikplatten. F30-Brandschutz nach DIN — sauber verspachtelt, übergeben.",
     year: "2024",
     duration: "5 Wochen",
-    image: "/projekt-buero.jpg",
+    image: "/projekt-buero.webp",
   },
 ];
 
