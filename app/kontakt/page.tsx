@@ -16,7 +16,7 @@ const steps = [
   {
     num: "01",
     title: "Du schreibst uns",
-    text: "Kurz dein Vorhaben über das Formular oder per Anruf — Wo, was, wann.",
+    text: "Kurz dein Vorhaben über das Formular oder per Anruf — wo, was, wann.",
   },
   {
     num: "02",
@@ -45,12 +45,19 @@ const faqs = [
   },
   {
     q: "In welchem Gebiet seid ihr tätig?",
-    a: `Im Großraum München, rund um Poing — etwa im Umkreis von 60 km. Bei größeren Projekten gerne auch darüber hinaus, sprich uns einfach an.`,
+    a: "Im Großraum München, rund um Poing — etwa im Umkreis von 60 km. Bei größeren Projekten gerne auch darüber hinaus, sprich uns einfach an.",
   },
   {
     q: "Übernehmt ihr alle Gewerke selbst?",
     a: "Ja, mit eigenem Team und eigenen Geräten — von Abbruch über Beton, Trockenbau und Fliesen bis zum Garten. Ein Ansprechpartner für alles.",
   },
+];
+
+const methods = [
+  { icon: <MailIcon />, label: "E-Mail", value: site.email, href: `mailto:${site.email}` },
+  { icon: <PhoneIcon />, label: "Telefon", value: site.phone },
+  { icon: <PinIcon />, label: "Sitz", value: site.location },
+  { icon: <ClockIcon />, label: "Einsatzgebiet", value: site.region },
 ];
 
 export default function KontaktPage() {
@@ -61,73 +68,102 @@ export default function KontaktPage() {
         {/* Hero */}
         <section className="relative overflow-hidden bg-ink pt-36 pb-20 text-paper md:pt-44 md:pb-28">
           <div
-            className="blueprint pointer-events-none absolute inset-0 text-amber opacity-50 [mask-image:radial-gradient(90%_80%_at_70%_20%,black,transparent)]"
+            className="blueprint pointer-events-none absolute inset-0 text-amber opacity-50 [mask-image:radial-gradient(90%_80%_at_60%_10%,black,transparent)]"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute -right-32 -top-20 h-[36rem] w-[36rem] rounded-full bg-amber/15 blur-[120px]"
+            className="pointer-events-none absolute -right-32 -top-24 h-[38rem] w-[38rem] rounded-full bg-amber/15 blur-[130px]"
             aria-hidden
           />
-          <div className="relative mx-auto max-w-6xl px-6">
-            <Reveal>
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-line-dark bg-ink-soft/60 px-4 py-2 backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-amber" />
-                </span>
-                <span className="eyebrow text-paper/80">
-                  Antwort in 24 Stunden · Erstgespräch kostenlos
-                </span>
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl md:text-7xl">
-                Lass uns über dein{" "}
-                <span className="serif-italic text-amber">Bauvorhaben</span>{" "}
-                reden.
-              </h1>
-            </Reveal>
-            <Reveal delay={200}>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-paper/70">
-                Sanierung, Innenausbau, Beton- oder Gartenarbeiten — schreib uns
-                kurz, was du planst, oder ruf direkt an. Wir nehmen uns Zeit.
-              </p>
-            </Reveal>
-            <Reveal delay={300}>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <a
-                  href="#formular"
-                  className="rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
-                >
-                  Anfrage senden →
-                </a>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium text-paper transition-colors hover:border-paper/60 hover:bg-paper/5"
-                >
-                  {site.email}
-                </a>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* Contact methods */}
-        <section className="bg-paper">
-          <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-            <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-              <Method icon={<MailIcon />} label="E-Mail" value={site.email} href={`mailto:${site.email}`} />
-              <Method icon={<PhoneIcon />} label="Telefon" value={site.phone} />
-              <Method icon={<PinIcon />} label="Sitz" value={site.location} />
-              <Method icon={<ClockIcon />} label="Einsatzgebiet" value={site.region} />
+          <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <Reveal>
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-line-dark bg-ink-soft/60 px-4 py-2 backdrop-blur-sm">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-amber" />
+                  </span>
+                  <span className="eyebrow text-paper/80">
+                    Antwort in 24 Stunden · Erstgespräch kostenlos
+                  </span>
+                </div>
+              </Reveal>
+              <Reveal delay={100}>
+                <h1 className="mt-8 text-5xl font-semibold leading-[0.98] tracking-tight sm:text-6xl md:text-7xl">
+                  Lass uns über dein{" "}
+                  <span className="serif-italic text-amber">Bauvorhaben</span>{" "}
+                  reden.
+                </h1>
+              </Reveal>
+              <Reveal delay={200}>
+                <p className="mt-8 max-w-lg text-lg leading-relaxed text-paper/70">
+                  Sanierung, Innenausbau, Beton- oder Gartenarbeiten — schreib
+                  uns kurz, was du planst, oder ruf direkt an. Wir nehmen uns
+                  Zeit.
+                </p>
+              </Reveal>
+              <Reveal delay={300}>
+                <div className="mt-10 flex flex-wrap items-center gap-4">
+                  <a
+                    href="#formular"
+                    className="rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
+                  >
+                    Anfrage senden →
+                  </a>
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium text-paper transition-colors hover:border-paper/60 hover:bg-paper/5"
+                  >
+                    Direkt schreiben
+                  </a>
+                </div>
+              </Reveal>
             </div>
+
+            {/* Info card */}
+            <Reveal delay={250} variant="right">
+              <div className="rounded-2xl border border-line-dark bg-ink-soft/50 p-7 backdrop-blur-sm md:p-8">
+                <p className="eyebrow text-amber">Direkter Draht</p>
+                <ul className="mt-6 space-y-5">
+                  {methods.map((m) => {
+                    const body = (
+                      <div className="flex items-center gap-4">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber/15 text-amber">
+                          {m.icon}
+                        </span>
+                        <div>
+                          <p className="eyebrow text-stone-light">{m.label}</p>
+                          <p className="mt-0.5 text-base text-paper">
+                            {m.value}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                    return (
+                      <li key={m.label}>
+                        {m.href ? (
+                          <a
+                            href={m.href}
+                            className="block rounded-xl p-2 transition-colors hover:bg-paper/5"
+                          >
+                            {body}
+                          </a>
+                        ) : (
+                          <div className="p-2">{body}</div>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </Reveal>
           </div>
         </section>
 
         {/* Steps + Form */}
-        <section id="formular" className="scroll-mt-24 bg-soft">
+        <section id="formular" className="scroll-mt-24 bg-paper">
           <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-            <div className="grid grid-cols-1 gap-14 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-20">
               <Reveal>
                 <div>
                   <p className="eyebrow text-stone">— So geht&apos;s weiter</p>
@@ -136,13 +172,18 @@ export default function KontaktPage() {
                     <span className="underline-amber">Festpreis</span>.
                   </h2>
 
-                  <ol className="mt-10 space-y-8">
+                  {/* Timeline */}
+                  <ol className="relative mt-12">
+                    <span
+                      className="absolute bottom-6 left-[22px] top-6 w-px bg-line"
+                      aria-hidden
+                    />
                     {steps.map((s) => (
-                      <li key={s.num} className="flex gap-5">
-                        <span className="font-mono text-sm text-amber">
+                      <li key={s.num} className="relative flex gap-6 pb-10 last:pb-0">
+                        <span className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber bg-paper font-mono text-sm text-amber">
                           {s.num}
                         </span>
-                        <div>
+                        <div className="pt-1.5">
                           <p className="text-lg font-medium tracking-tight">
                             {s.title}
                           </p>
@@ -153,56 +194,85 @@ export default function KontaktPage() {
                       </li>
                     ))}
                   </ol>
+
+                  <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-soft px-4 py-2 text-sm text-ink/70">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber" />
+                    Kostenlos & unverbindlich
+                  </div>
                 </div>
               </Reveal>
 
               <Reveal delay={120}>
-                <ContactForm />
+                <div className="relative">
+                  <span
+                    className="absolute -top-3 left-8 right-8 h-3 rounded-t-2xl bg-amber/30"
+                    aria-hidden
+                  />
+                  <div className="relative shadow-xl shadow-ink/5">
+                    <ContactForm />
+                  </div>
+                </div>
               </Reveal>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="bg-paper">
-          <div className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+        <section className="bg-soft">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <Reveal>
-              <p className="eyebrow text-stone">— Häufige Fragen</p>
-              <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
-                Gut zu wissen.
-              </h2>
+              <div className="lg:sticky lg:top-28 lg:self-start">
+                <p className="eyebrow text-stone">— Häufige Fragen</p>
+                <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+                  Gut zu wissen.
+                </h2>
+                <p className="mt-6 max-w-xs text-base leading-relaxed text-ink/65">
+                  Noch etwas offen? Schreib uns einfach — wir antworten ehrlich
+                  und ohne Verkaufsdruck.
+                </p>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="mt-6 inline-flex text-sm font-medium text-amber underline-offset-4 hover:underline"
+                >
+                  {site.email} →
+                </a>
+              </div>
             </Reveal>
             <Reveal delay={120}>
-              <div className="mt-10">
-                <Faq items={faqs} />
-              </div>
+              <Faq items={faqs} />
             </Reveal>
           </div>
         </section>
 
         {/* CTA band */}
-        <section className="bg-ink text-paper">
-          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 py-16 md:flex-row md:items-center md:py-20">
+        <section className="relative overflow-hidden bg-ink text-paper">
+          <div
+            className="blueprint pointer-events-none absolute inset-0 text-amber opacity-40 [mask-image:radial-gradient(80%_120%_at_50%_50%,black,transparent)]"
+            aria-hidden
+          />
+          <div className="relative mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 py-16 md:flex-row md:items-center md:py-24">
             <div>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                Lieber direkt anrufen?
+              <p className="eyebrow text-amber">— Bereit?</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-5xl">
+                Dein Bauvorhaben wartet nicht.
               </h2>
-              <p className="mt-3 text-paper/65">
-                Wir sind erreichbar — und beraten dich gern persönlich.
+              <p className="mt-3 max-w-md text-paper/65">
+                Erstgespräch & Aufmaß kostenlos. Wir melden uns innerhalb von 24
+                Stunden.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <a
-                href={`mailto:${site.email}`}
-                className="rounded-full border border-paper/25 px-6 py-3.5 text-base font-medium transition-colors hover:border-paper/60"
-              >
-                {site.email}
-              </a>
-              <a
                 href="#formular"
-                className="rounded-full bg-amber px-6 py-3.5 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
+                className="rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
               >
                 Anfrage senden →
+              </a>
+              <a
+                href={`mailto:${site.email}`}
+                className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium transition-colors hover:border-paper/60"
+              >
+                {site.email}
               </a>
             </div>
           </div>
@@ -213,36 +283,9 @@ export default function KontaktPage() {
   );
 }
 
-function Method({
-  icon,
-  label,
-  value,
-  href,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  href?: string;
-}) {
-  const inner = (
-    <div className="group h-full bg-paper p-7 transition-colors duration-300 hover:bg-soft">
-      <div className="text-amber">{icon}</div>
-      <p className="eyebrow mt-5 text-stone">{label}</p>
-      <p className="mt-1 text-base text-ink">{value}</p>
-    </div>
-  );
-  return href ? (
-    <a href={href} className="block">
-      {inner}
-    </a>
-  ) : (
-    inner
-  );
-}
-
 const iconProps = {
-  width: 24,
-  height: 24,
+  width: 22,
+  height: 22,
   viewBox: "0 0 24 24",
   fill: "none",
   stroke: "currentColor",
