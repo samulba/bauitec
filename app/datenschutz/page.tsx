@@ -30,13 +30,14 @@ export default function DatenschutzPage() {
             <p>
               Verantwortlich für die Datenverarbeitung auf dieser Website ist:
               <br />
-              [Firmenname / Inhaber]
+              Bauitec GmbH
               <br />
-              [Straße und Hausnummer], [PLZ] Poing
+              Carl-Spitzweg-Platz 5, 85586 Poing
               <br />
-              E-Mail: <a href="mailto:info@bauitec.com">info@bauitec.com</a>
+              E-Mail:{" "}
+              <a href="mailto:Bauitec@outlook.com">Bauitec@outlook.com</a>
               <br />
-              Telefon: [Telefonnummer]
+              Telefon: <a href="tel:+4917620269408">+49 176 20269408</a>
             </p>
           </Section>
 
@@ -82,6 +83,14 @@ export default function DatenschutzPage() {
               lit. b und lit. a DSGVO. Die Daten werden gelöscht, sobald sie für
               den Zweck nicht mehr erforderlich sind, spätestens nach [Frist],
               soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+            </p>
+            <p className="mt-3">
+              Für den Versand der Formularanfragen setzen wir den Dienst
+              Web3Forms (Tarptautiškas MB, Litauen) als Auftragsverarbeiter ein.
+              Die Formulardaten werden dabei an dessen Server übertragen, um die
+              Anfrage per E-Mail an uns zuzustellen. Sofern der Versanddienst
+              nicht aktiviert ist, wird stattdessen direkt dein E-Mail-Programm
+              geöffnet und es findet keine Übermittlung an Dritte statt.
             </p>
           </Section>
 

@@ -5,10 +5,10 @@ import { ProgressRing } from "./ProgressRing";
 export function Numbers() {
   return (
     <section className="bg-soft">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-28">
         <Reveal>
           <p className="eyebrow text-stone">— bauitec in Zahlen</p>
-          <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
             Zahlen, die wir{" "}
             <span className="underline-amber">halten</span>.
           </h2>
@@ -29,8 +29,8 @@ export function Numbers() {
               {/* Featured tile */}
               <div className="group relative flex flex-col justify-between bg-ink p-8 transition-colors duration-300 hover:bg-ink-soft md:p-10 lg:row-span-2">
                 <span className="block h-[3px] w-10 bg-amber transition-all duration-500 group-hover:w-20" />
-                <div className="mt-12 lg:mt-24">
-                  <p className="text-7xl font-semibold tracking-tight md:text-8xl">
+                <div className="mt-8 lg:mt-24">
+                  <p className="text-6xl font-semibold tracking-tight sm:text-7xl md:text-8xl">
                     <CountUp end={93} />
                     <span className="text-amber">+</span>
                   </p>

@@ -52,7 +52,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-ink pt-32 pb-14 text-paper"
+      className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-ink pt-28 pb-12 text-paper md:pt-32 md:pb-14"
     >
       {/* Blueprint grid (amber, masked) */}
       <div
@@ -82,7 +82,7 @@ export function Hero() {
               </div>
             </Reveal>
 
-            <h1 className="mt-8 text-[3.25rem] font-semibold leading-[0.92] tracking-tight sm:text-7xl md:text-8xl xl:text-[4.25rem] 2xl:text-7xl">
+            <h1 className="mt-6 text-[2.6rem] font-semibold leading-[0.95] tracking-tight sm:text-7xl sm:leading-[0.92] md:mt-8 md:text-8xl xl:text-[4.25rem] 2xl:text-7xl">
               <Reveal delay={80} as="span" className="block">
                 Wir bauen,
               </Reveal>
@@ -102,7 +102,7 @@ export function Hero() {
             </h1>
 
             <Reveal delay={360}>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-paper/70">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-paper/70 sm:text-lg md:mt-8">
                 Sanierung, Innenausbau, Beton- und Gartenarbeiten — vom ersten
                 Aushub bis zur Abnahme. In einer Hand. Mit eigenem Team. In
                 Poing bei München.
@@ -110,7 +110,7 @@ export function Hero() {
             </Reveal>
 
             <Reveal delay={440}>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 md:mt-10">
                 <a
                   href="/kontakt"
                   className="group relative overflow-hidden rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
@@ -138,7 +138,7 @@ export function Hero() {
 
         {/* Trust / stats strip */}
         <Reveal delay={560}>
-          <div className="mt-16 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-8 border-t border-line-dark pt-8 sm:grid-cols-4">
+          <div className="mt-10 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-line-dark pt-7 sm:grid-cols-4 md:mt-16 md:gap-y-8 md:pt-8">
             <div>
               <div className="flex gap-0.5 text-amber" aria-hidden>
                 {"★★★★★".split("").map((s, i) => (
@@ -160,7 +160,7 @@ export function Hero() {
       </div>
 
       {/* Scroll hint */}
-      <div className="relative mx-auto mt-12 w-full max-w-6xl px-6">
+      <div className="relative mx-auto mt-8 w-full max-w-6xl px-6 md:mt-12">
         <div className="flex items-center gap-3 text-paper/50">
           <span className="relative flex h-9 w-5 justify-center rounded-full border border-paper/30">
             <span className="mt-1.5 h-1.5 w-1 animate-bounce rounded-full bg-amber" />

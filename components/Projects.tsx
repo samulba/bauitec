@@ -6,14 +6,14 @@ import { projects } from "@/lib/content";
 export function Projects() {
   return (
     <section id="projekte" className="bg-ink text-paper">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-32">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
           <Reveal>
             <div>
               <p className="eyebrow text-stone-light">
                 04 — <span className="text-amber">Ausgewählte Projekte</span>
               </p>
-              <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
                 Gebaut. <span className="underline-amber">Übergeben.</span>
               </h2>
             </div>

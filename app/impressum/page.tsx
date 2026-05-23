@@ -20,36 +20,43 @@ export default function ImpressumPage() {
           </h1>
 
           <p className="mt-4 rounded-lg border border-amber/40 bg-amber/10 px-4 py-3 text-sm text-ink/70">
-            Hinweis: Die folgenden Angaben enthalten Platzhalter
-            <span className="font-medium"> [in eckigen Klammern]</span> und
-            müssen vor Veröffentlichung durch die tatsächlichen Daten ersetzt
-            und rechtlich geprüft werden.
+            Hinweis: Bitte ergänze noch den/die Namen der
+            vertretungsberechtigten Geschäftsführer (unten mit
+            <span className="font-medium"> [in eckigen Klammern]</span>{" "}
+            markiert).
           </p>
 
           <Section title="Angaben gemäß § 5 DDG">
             <p>
-              [Firmenname / Bauitec]
+              Bauitec GmbH
               <br />
-              [Rechtsform, z. B. Einzelunternehmen]
+              Carl-Spitzweg-Platz 5
               <br />
-              [Straße und Hausnummer]
-              <br />
-              [PLZ] Poing
+              85586 Poing
               <br />
               Deutschland
             </p>
           </Section>
 
+          <Section title="Handelsregister">
+            <p>
+              Handelsregister: 263036
+              <br />
+              Registergericht: Amtsgericht München
+            </p>
+          </Section>
+
           <Section title="Vertreten durch">
-            <p>[Vor- und Nachname des Inhabers / der Geschäftsführung]</p>
+            <p>[Vor- und Nachname der Geschäftsführer]</p>
           </Section>
 
           <Section title="Kontakt">
             <p>
-              Telefon: [Telefonnummer]
+              Telefon:{" "}
+              <a href="tel:+4917620269408">+49 176 20269408</a>
               <br />
               E-Mail:{" "}
-              <a href="mailto:info@bauitec.com">info@bauitec.com</a>
+              <a href="mailto:Bauitec@outlook.com">Bauitec@outlook.com</a>
             </p>
           </Section>
 
@@ -58,23 +65,15 @@ export default function ImpressumPage() {
               Umsatzsteuer-Identifikationsnummer gemäß § 27 a
               Umsatzsteuergesetz:
               <br />
-              [USt-IdNr., z. B. DE123456789]
-            </p>
-          </Section>
-
-          <Section title="Eintragung / Handwerksrolle">
-            <p>
-              [Zuständige Handwerkskammer, falls zutreffend]
-              <br />
-              [Registernummer, falls zutreffend]
+              DE281976972
             </p>
           </Section>
 
           <Section title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
             <p>
-              [Vor- und Nachname]
+              [Vor- und Nachname der Geschäftsführer]
               <br />
-              [Anschrift wie oben]
+              Carl-Spitzweg-Platz 5, 85586 Poing
             </p>
           </Section>
 
@@ -95,9 +94,18 @@ export default function ImpressumPage() {
 
           <Section title="Verbraucherstreitbeilegung / Universalschlichtungsstelle">
             <p>
-              Wir sind nicht bereit oder verpflichtet, an
-              Streitbeilegungsverfahren vor einer
-              Verbraucherschlichtungsstelle teilzunehmen.
+              Wir nehmen an einem Streitbeilegungsverfahren vor einer
+              Verbraucherschlichtungsstelle teil. Zuständig ist die
+              Universalschlichtungsstelle des Zentrums für Schlichtung e.V.,
+              Straßburger Straße 8, 77694 Kehl am Rhein (
+              <a
+                href="https://www.verbraucher-schlichter.de"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.verbraucher-schlichter.de
+              </a>
+              ).
             </p>
           </Section>
         </article>
