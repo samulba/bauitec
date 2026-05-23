@@ -52,7 +52,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-ink pt-24 pb-8 text-paper md:pt-32 md:pb-14"
+      className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-ink pt-20 pb-6 text-paper md:pt-32 md:pb-14"
     >
       {/* Blueprint grid (amber, masked) */}
       <div
@@ -65,6 +65,13 @@ export function Hero() {
         className="pointer-events-none absolute -right-40 -top-20 h-[42rem] w-[42rem] rounded-full bg-amber/20 blur-[120px]"
         aria-hidden
       />
+      {/* Faint blueprint accent (mobile/tablet depth) */}
+      <div
+        className="pointer-events-none absolute -bottom-28 -right-24 w-[24rem] opacity-70 xl:hidden"
+        aria-hidden
+      >
+        <FloorPlan />
+      </div>
       <div className="relative mx-auto w-full max-w-6xl px-6">
         <div className="grid items-center gap-10 xl:grid-cols-[1.12fr_0.88fr]">
           {/* Left: content */}
@@ -82,7 +89,7 @@ export function Hero() {
               </div>
             </div>
 
-            <h1 className="mt-6 text-[2.6rem] font-semibold leading-[0.95] tracking-tight sm:text-7xl sm:leading-[0.92] md:mt-8 md:text-8xl xl:text-[4.25rem] 2xl:text-7xl">
+            <h1 className="mt-6 text-[2.95rem] font-semibold leading-[0.94] tracking-tight sm:text-7xl sm:leading-[0.92] md:mt-8 md:text-8xl xl:text-[4.25rem] 2xl:text-7xl">
               <span className="rise block" style={{ animationDelay: "80ms" }}>
                 Wir bauen,
               </span>

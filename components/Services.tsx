@@ -37,25 +37,26 @@ export function Services() {
               <button
                 type="button"
                 onClick={() => setOpenIdx(i)}
-                className="group relative flex h-full w-full flex-col overflow-hidden bg-paper p-5 text-left transition-colors duration-300 hover:bg-soft sm:p-7"
+                className="group relative flex h-full w-full flex-col overflow-hidden bg-paper p-5 text-left transition-colors duration-300 hover:bg-soft active:bg-soft sm:p-7"
               >
                 <span
                   className="absolute right-0 top-0 h-1 w-0 bg-amber transition-all duration-500 group-hover:w-full"
                   aria-hidden
                 />
                 <p className="eyebrow text-stone transition-colors group-hover:text-amber">
-                  {s.num} · {s.label}
+                  {s.num}
+                  <span className="hidden sm:inline"> · {s.label}</span>
                 </p>
-                <div className="mt-5 text-amber transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110 sm:mt-6">
+                <div className="mt-4 text-amber transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110 sm:mt-6">
                   <ServiceIcon name={s.icon} />
                 </div>
-                <h3 className="mt-4 text-base font-semibold tracking-tight sm:mt-5 sm:text-xl">
+                <h3 className="mt-3 text-base font-semibold tracking-tight sm:mt-5 sm:text-xl">
                   {s.title}
                 </h3>
                 <p className="mt-2 hidden flex-1 text-sm leading-relaxed text-ink/65 sm:block">
                   {s.text}
                 </p>
-                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-amber sm:mt-5 sm:text-sm sm:opacity-0 sm:transition-opacity sm:duration-300 sm:group-hover:opacity-100">
+                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-amber transition-transform group-hover:translate-x-1 sm:mt-5 sm:text-sm sm:opacity-0 sm:transition-opacity sm:duration-300 sm:group-hover:opacity-100">
                   Mehr →
                 </span>
               </button>
