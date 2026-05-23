@@ -21,6 +21,8 @@ export type Service = {
   title: string;
   text: string;
   icon: string;
+  long: string;
+  points: string[];
 };
 
 export const services: Service[] = [
@@ -30,6 +32,13 @@ export const services: Service[] = [
     title: "Sanierung",
     text: "Komplettsanierung von Wohn- und Geschäftsräumen. Abriss, Estrich, Trockenbau, Boden, Fliesen — in einem Zug.",
     icon: "renovation",
+    long: "Wir sanieren Wohnungen, Häuser und Gewerbeflächen komplett — von der Entkernung bis zur bezugsfertigen Übergabe. Alle Gewerke laufen koordiniert ineinander, damit dein Projekt ohne Leerlauf und ohne Schnittstellen-Chaos fertig wird.",
+    points: [
+      "Entkernung & Abbruch",
+      "Estrich, Trockenbau & Boden",
+      "Bäder, Fliesen & Maler",
+      "Termin- und Festpreisgarantie",
+    ],
   },
   {
     num: "02",
@@ -37,6 +46,13 @@ export const services: Service[] = [
     title: "Betonarbeiten",
     text: "Fundamente, Bodenplatten, Stützmauern. Eigene Schalungen, eigene Geräte — auch für komplexe Geometrien.",
     icon: "concrete",
+    long: "Vom Fundament bis zur Stützmauer: Wir schalen, bewehren und betonieren mit eigenem Gerät — auch bei anspruchsvollen Geometrien und beengten Baustellen.",
+    points: [
+      "Fundamente & Bodenplatten",
+      "Stützmauern & Winkelsteine",
+      "Eigene Schalungen",
+      "Sichtbeton auf Wunsch",
+    ],
   },
   {
     num: "03",
@@ -44,6 +60,13 @@ export const services: Service[] = [
     title: "Trockenbau",
     text: "Wände, Decken, abgehängte Konstruktionen. Brandschutz und Schallschutz nach DIN — sauber verspachtelt.",
     icon: "drywall",
+    long: "Wände, Decken und abgehängte Konstruktionen — sauber geplant und verspachtelt. Brand- und Schallschutz setzen wir normgerecht nach DIN um.",
+    points: [
+      "Trennwände & Vorsatzschalen",
+      "Abgehängte Decken",
+      "Brandschutz F30–F90",
+      "Schallschutz nach DIN",
+    ],
   },
   {
     num: "04",
@@ -51,6 +74,13 @@ export const services: Service[] = [
     title: "Fliesenverlegung",
     text: "Bad, Küche, Außenbereich. Großformat, Mosaik, XXL-Platten — präzise verfugt, sauber abgesetzt.",
     icon: "tiles",
+    long: "Ob Bad, Küche oder Außenbereich — wir verlegen Groß- und Kleinformate präzise, mit sauberen Fugen und sauberem Abschluss.",
+    points: [
+      "Groß- & XXL-Formate",
+      "Mosaik & Naturstein",
+      "Bäder & Nassbereiche",
+      "Außen- & Terrassenbeläge",
+    ],
   },
   {
     num: "05",
@@ -58,6 +88,13 @@ export const services: Service[] = [
     title: "Bodenbeläge",
     text: "Parkett, Vinyl, Laminat, Estrich. Vom Untergrund bis zur fertigen Oberfläche — alle Beläge, alle Räume.",
     icon: "floor",
+    long: "Vom Untergrund bis zur fertigen Oberfläche: Wir bereiten den Boden vor und verlegen den passenden Belag — fachgerecht und langlebig.",
+    points: [
+      "Parkett & Laminat",
+      "Vinyl & Designboden",
+      "Estrich & Spachtelung",
+      "Untergrund-Vorbereitung",
+    ],
   },
   {
     num: "06",
@@ -65,6 +102,13 @@ export const services: Service[] = [
     title: "Gartenbau",
     text: "Pflasterung, Hochbeete, Zäune, Terrassen. Außenanlagen mit Charakter — solide gebaut, sauber abgesetzt.",
     icon: "garden",
+    long: "Außenanlagen mit Charakter: Pflaster, Terrassen, Hochbeete und Zäune — solide gebaut und sauber abgesetzt, mit eigenem Bagger.",
+    points: [
+      "Pflaster & Wege",
+      "Terrassen & Sichtschutz",
+      "Hochbeete & Einfassungen",
+      "Erd- & Aushubarbeiten",
+    ],
   },
   {
     num: "07",
@@ -72,6 +116,13 @@ export const services: Service[] = [
     title: "Abbruch",
     text: "Selektiver Rückbau und Komplettabbruch. Eigene Bagger, eigene Container — Entsorgung inklusive.",
     icon: "demolition",
+    long: "Selektiver Rückbau oder Komplettabbruch — inklusive fachgerechter Trennung und Entsorgung. Auch Sondermüll wie Asbest und Eternit nach Vorschrift.",
+    points: [
+      "Selektiver Rückbau",
+      "Komplettabbruch",
+      "Sondermüll (Asbest/Eternit)",
+      "Container & Abtransport",
+    ],
   },
   {
     num: "08",
@@ -79,6 +130,13 @@ export const services: Service[] = [
     title: "Eigene Geräte",
     text: "Gerüst, Zaun, Schalungen, Bagger — alles im eigenen Bestand. Keine Mietgeräte, keine Wartezeiten.",
     icon: "machinery",
+    long: "Gerüst, Bauzaun, Schalungen und Bagger gehören uns selbst. Das heißt: keine Mietkosten, keine Wartezeiten und volle Flexibilität auf der Baustelle.",
+    points: [
+      "Bagger & Baumaschinen",
+      "Gerüst & Bauzaun",
+      "Schalungssysteme",
+      "Sofort verfügbar",
+    ],
   },
 ];
 
