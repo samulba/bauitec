@@ -9,7 +9,7 @@ import { site, serviceOptions } from "@/lib/content";
 const WEB3FORMS_ACCESS_KEY = "675be533-f77d-47cf-9817-c730a80f9273";
 
 const inputClass =
-  "mt-2 w-full rounded-xl border border-line bg-paper px-4 py-3.5 text-base text-ink outline-none transition-shadow placeholder:text-stone/50 focus:border-amber focus:ring-4 focus:ring-amber/15";
+  "mt-1.5 w-full rounded-lg border border-line bg-paper px-4 py-3 text-[15px] text-ink outline-none transition-shadow placeholder:text-stone/50 focus:border-amber focus:ring-4 focus:ring-amber/15";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
@@ -61,7 +61,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-soft p-7 md:p-9">
+    <div className="overflow-hidden rounded-2xl border border-line bg-soft p-6 md:p-8">
       {status === "done" ? (
         <div className="flex min-h-80 flex-col items-center justify-center py-6 text-center">
           <div className="relative h-16 w-16">
@@ -100,7 +100,7 @@ export function ContactForm() {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="checkbox"
             name="botcheck"
@@ -110,16 +110,19 @@ export function ContactForm() {
             aria-hidden="true"
           />
           <Field label="Name" name="name" required placeholder="Max Mustermann" />
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <Field label="Telefon" name="telefon" type="tel" placeholder="0151 …" />
-            <Field
-              label="E-Mail"
-              name="email"
-              type="email"
-              required
-              placeholder="max@email.de"
-            />
-          </div>
+          <Field
+            label="E-Mail"
+            name="email"
+            type="email"
+            required
+            placeholder="max@email.de"
+          />
+          <Field
+            label="Telefon"
+            name="telefon"
+            type="tel"
+            placeholder="0151 23456789"
+          />
 
           <div>
             <label className="eyebrow text-stone" htmlFor="bauvorhaben">
