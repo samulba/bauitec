@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Logo } from "./Logo";
 import { nav } from "@/lib/content";
 
@@ -44,13 +45,14 @@ export function Nav({ solid = false }: { solid?: boolean }) {
           onDark ? "text-paper" : "text-ink"
         }`}
       >
-        <a href="/" aria-label="bauitec — Startseite" className="shrink-0">
+        <Link href="/" aria-label="bauitec — Startseite" className="shrink-0">
           <Logo size="text-xl" />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
           {nav.map((item) => (
-            <a
+            <Link
+              prefetch={false}
               key={item.href}
               href={item.href}
               className={`text-sm transition-colors ${
@@ -60,16 +62,17 @@ export function Nav({ solid = false }: { solid?: boolean }) {
               }`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
+        <Link
+          prefetch={false}
           href="/kontakt"
           className="hidden rounded-full bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5 md:inline-flex"
         >
           Anfrage senden →
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -113,22 +116,24 @@ export function Nav({ solid = false }: { solid?: boolean }) {
       >
         <nav className="mx-auto flex max-w-[1680px] flex-col gap-1 px-6 pb-6 pt-2 lg:px-12">
           {nav.map((item) => (
-            <a
+            <Link
+              prefetch={false}
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
               className="border-b border-line/60 py-3 text-lg text-ink/80"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
+            prefetch={false}
             href="/kontakt"
             onClick={() => setOpen(false)}
             className="mt-4 inline-flex justify-center rounded-full bg-amber px-5 py-3 text-base font-medium text-ink"
           >
             Anfrage senden →
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

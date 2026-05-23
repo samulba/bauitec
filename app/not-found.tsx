@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
@@ -34,18 +35,20 @@ export default function NotFound() {
               Problem — zurück zur Startseite oder direkt eine Anfrage stellen.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a
+              <Link
+                prefetch={false}
                 href="/"
                 className="rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
               >
                 Zur Startseite
-              </a>
-              <a
+              </Link>
+              <Link
+                prefetch={false}
                 href="/kontakt"
                 className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium text-paper transition-colors hover:border-paper/60 hover:bg-paper/5"
               >
                 Anfrage senden →
-              </a>
+              </Link>
             </div>
           </div>
         </section>

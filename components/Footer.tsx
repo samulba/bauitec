@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Logo } from "./Logo";
 import { CookieSettingsButton } from "./CookieSettingsButton";
 import { site } from "@/lib/content";
@@ -69,12 +70,12 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-4 border-t border-line-dark pt-8 text-sm text-paper/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Bauitec GmbH · Poing bei München</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <a href="/impressum" className="transition-colors hover:text-paper">
+            <Link prefetch={false} href="/impressum" className="transition-colors hover:text-paper">
               Impressum
-            </a>
-            <a href="/datenschutz" className="transition-colors hover:text-paper">
+            </Link>
+            <Link prefetch={false} href="/datenschutz" className="transition-colors hover:text-paper">
               Datenschutz
-            </a>
+            </Link>
             <CookieSettingsButton className="transition-colors hover:text-paper" />
           </div>
         </div>

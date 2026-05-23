@@ -19,7 +19,10 @@ export function ProjectImage({
       <img
         src={src}
         alt={alt}
+        width={1200}
+        height={900}
         loading="lazy"
+        decoding="async"
         onError={() => setFailed(true)}
         className="zoom-img h-full w-full object-cover"
       />

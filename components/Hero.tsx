@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Reveal } from "./Reveal";
+import Link from "next/link";
 import { CountUp } from "./CountUp";
 
 export function Hero() {
@@ -70,7 +70,7 @@ export function Hero() {
           {/* Left: content */}
           <div>
             {/* Availability pill */}
-            <Reveal>
+            <div className="rise">
               <div className="inline-flex items-center gap-2.5 rounded-full border border-line-dark bg-ink-soft/60 px-4 py-2 backdrop-blur-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber opacity-75" />
@@ -80,52 +80,55 @@ export function Hero() {
                   Bauunternehmen · Poing bei München
                 </span>
               </div>
-            </Reveal>
+            </div>
 
             <h1 className="mt-6 text-[2.6rem] font-semibold leading-[0.95] tracking-tight sm:text-7xl sm:leading-[0.92] md:mt-8 md:text-8xl xl:text-[4.25rem] 2xl:text-7xl">
-              <Reveal delay={80} as="span" className="block">
+              <span className="rise block" style={{ animationDelay: "80ms" }}>
                 Wir bauen,
-              </Reveal>
-              <Reveal delay={170} as="span" className="block">
+              </span>
+              <span className="rise block" style={{ animationDelay: "170ms" }}>
                 <span className="relative inline-block">
                   <span className="px-2 text-paper">was&nbsp;bleibt.</span>
                   <span className="mark-wipe absolute inset-0 flex items-center bg-amber px-2 text-ink">
                     was&nbsp;bleibt.
                   </span>
                 </span>
-              </Reveal>
-              <Reveal delay={260} as="span" variant="left" className="block">
+              </span>
+              <span className="rise block" style={{ animationDelay: "260ms" }}>
                 <span className="serif-italic text-stone-light">
                   nicht das Versprechen.
                 </span>
-              </Reveal>
+              </span>
             </h1>
 
-            <Reveal delay={360}>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-paper/70 sm:text-lg md:mt-8">
-                Dein Bauunternehmen für Sanierung, Innenausbau, Beton- und
-                Gartenarbeiten — vom ersten Aushub bis zur Abnahme. Alles in
-                einer Hand, mit eigenem Team. Im Großraum München.
-              </p>
-            </Reveal>
+            <p
+              className="rise mt-6 max-w-xl text-base leading-relaxed text-paper/70 sm:text-lg md:mt-8"
+              style={{ animationDelay: "360ms" }}
+            >
+              Dein Bauunternehmen für Sanierung, Innenausbau, Beton- und
+              Gartenarbeiten — vom ersten Aushub bis zur Abnahme. Alles in
+              einer Hand, mit eigenem Team. Im Großraum München.
+            </p>
 
-            <Reveal delay={440}>
-              <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 md:mt-10">
-                <a
-                  href="/kontakt"
-                  className="group relative overflow-hidden rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
-                >
-                  <span className="relative z-10">Projekt anfragen →</span>
-                  <span className="absolute inset-0 -translate-x-full bg-paper/20 transition-transform duration-500 group-hover:translate-x-0" />
-                </a>
-                <a
-                  href="#leistungen"
-                  className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium text-paper transition-colors hover:border-paper/60 hover:bg-paper/5"
-                >
-                  Leistungen ansehen
-                </a>
-              </div>
-            </Reveal>
+            <div
+              className="rise mt-8 flex flex-wrap items-center gap-3 sm:gap-4 md:mt-10"
+              style={{ animationDelay: "440ms" }}
+            >
+              <Link
+                prefetch={false}
+                href="/kontakt"
+                className="group relative overflow-hidden rounded-full bg-amber px-7 py-4 text-base font-medium text-ink transition-transform hover:-translate-y-0.5"
+              >
+                <span className="relative z-10">Projekt anfragen →</span>
+                <span className="absolute inset-0 -translate-x-full bg-paper/20 transition-transform duration-500 group-hover:translate-x-0" />
+              </Link>
+              <a
+                href="#leistungen"
+                className="rounded-full border border-paper/25 px-7 py-4 text-base font-medium text-paper transition-colors hover:border-paper/60 hover:bg-paper/5"
+              >
+                Leistungen ansehen
+              </a>
+            </div>
           </div>
 
           {/* Right: blueprint floor plan */}
@@ -137,7 +140,7 @@ export function Hero() {
         </div>
 
         {/* Trust / stats strip */}
-        <Reveal delay={560}>
+        <div className="rise" style={{ animationDelay: "560ms" }}>
           <div className="mt-8 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-5 border-t border-line-dark pt-6 sm:grid-cols-4 md:mt-16 md:gap-y-8 md:pt-8">
             <div>
               <div className="flex gap-0.5 text-amber" aria-hidden>
@@ -156,7 +159,7 @@ export function Hero() {
               <p className="mt-1 text-sm text-paper/60">Subunternehmer</p>
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
 
       {/* Scroll hint */}
