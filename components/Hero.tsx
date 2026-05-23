@@ -52,7 +52,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-ink pt-28 pb-12 text-paper md:pt-32 md:pb-14"
+      className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-ink pt-24 pb-8 text-paper md:pt-32 md:pb-14"
     >
       {/* Blueprint grid (amber, masked) */}
       <div
@@ -77,7 +77,7 @@ export function Hero() {
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-amber" />
                 </span>
                 <span className="eyebrow text-paper/80">
-                  Poing bei München · Erstgespräch kostenlos
+                  Bauunternehmen · Poing bei München
                 </span>
               </div>
             </Reveal>
@@ -103,9 +103,9 @@ export function Hero() {
 
             <Reveal delay={360}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-paper/70 sm:text-lg md:mt-8">
-                Sanierung, Innenausbau, Beton- und Gartenarbeiten — vom ersten
-                Aushub bis zur Abnahme. In einer Hand. Mit eigenem Team. In
-                Poing bei München.
+                Dein Bauunternehmen für Sanierung, Innenausbau, Beton- und
+                Gartenarbeiten — vom ersten Aushub bis zur Abnahme. Alles in
+                einer Hand, mit eigenem Team. Im Großraum München.
               </p>
             </Reveal>
 
@@ -138,7 +138,7 @@ export function Hero() {
 
         {/* Trust / stats strip */}
         <Reveal delay={560}>
-          <div className="mt-10 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-line-dark pt-7 sm:grid-cols-4 md:mt-16 md:gap-y-8 md:pt-8">
+          <div className="mt-8 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-5 border-t border-line-dark pt-6 sm:grid-cols-4 md:mt-16 md:gap-y-8 md:pt-8">
             <div>
               <div className="flex gap-0.5 text-amber" aria-hidden>
                 {"★★★★★".split("").map((s, i) => (
@@ -160,7 +160,7 @@ export function Hero() {
       </div>
 
       {/* Scroll hint */}
-      <div className="relative mx-auto mt-8 w-full max-w-6xl px-6 md:mt-12">
+      <div className="relative mx-auto mt-8 hidden w-full max-w-6xl px-6 md:mt-12 md:block">
         <div className="flex items-center gap-3 text-paper/50">
           <span className="relative flex h-9 w-5 justify-center rounded-full border border-paper/30">
             <span className="mt-1.5 h-1.5 w-1 animate-bounce rounded-full bg-amber" />
