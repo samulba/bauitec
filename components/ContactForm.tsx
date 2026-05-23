@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { site, serviceOptions } from "@/lib/content";
 
+// Kostenloser, serverloser Formularversand über Web3Forms (unbegrenzte
+// Einsendungen, gratis). Hol dir einen Access Key auf https://web3forms.com
+// (nur E-Mail nötig, kein Konto/Telefon) und trage ihn hier ein.
+// Solange der Key leer ist, öffnet das Formular ersatzweise das E-Mail-Programm.
+const WEB3FORMS_ACCESS_KEY = "";
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
     "idle",
@@ -10,14 +16,40 @@ export function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sending");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data = Object.fromEntries(
+      new FormData(form).entries(),
+    ) as Record<string, string>;
+
+    // Fallback ohne Key: E-Mail-Programm mit vorausgefüllter Nachricht öffnen.
+    if (!WEB3FORMS_ACCESS_KEY) {
+      const body = [
+        `Name: ${data.name ?? ""}`,
+        `Telefon: ${data.telefon ?? ""}`,
+        `E-Mail: ${data.email ?? ""}`,
+        `Bauvorhaben: ${data.bauvorhaben ?? ""}`,
+        "",
+        data.beschreibung ?? "",
+      ].join("\n");
+      window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
+        "Anfrage über die Website",
+      )}&body=${encodeURIComponent(body)}`;
+      setStatus("done");
+      form.reset();
+      return;
+    }
+
+    setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "Neue Anfrage über bauitec.com",
+          from_name: data.name,
+          ...data,
+        }),
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("done");
