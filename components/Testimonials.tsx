@@ -53,12 +53,12 @@ export function Testimonials() {
       </div>
 
       {/* Infinite marquee of reviews */}
-      <div className="marquee mt-12 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] md:mt-16">
-        <div className="marquee-track" style={{ animationDuration: "50s" }}>
+      <div className="marquee mt-12 md:mt-16">
+        <div className="marquee-track py-2" style={{ animationDuration: "55s" }}>
           {loop.map((t, i) => (
             <figure
               key={i}
-              className="hover-lift relative mr-5 flex w-[300px] shrink-0 flex-col whitespace-normal rounded-2xl border border-line bg-paper p-6 sm:w-[360px]"
+              className="relative mr-5 flex w-[300px] shrink-0 flex-col whitespace-normal rounded-2xl border border-line bg-paper p-6 shadow-sm shadow-ink/5 transition-colors duration-300 hover:border-amber/50 sm:w-[360px]"
             >
               <span
                 className="serif-italic pointer-events-none absolute right-5 top-1 select-none text-6xl leading-none text-amber/15"
