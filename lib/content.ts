@@ -183,6 +183,25 @@ export const testimonials: Testimonial[] = [
     project: "Entsorgung",
     date: "Mai 2026",
   },
+  {
+    quote:
+      "Herr Gashi von Bauitec war pünktlich vor Ort und hat den Auftrag vollständig ausgeführt. Ich kann Bauitec weiterempfehlen.",
+    name: "Bertrand, Herrsching",
+    project: "Sondermüll",
+    date: "Okt 2024",
+  },
+  {
+    quote: "Sehr freundlich, Auftrag gemäß Absprache durchgeführt.",
+    name: "Smely, Taufkirchen",
+    project: "Montage",
+    date: "Mai 2026",
+  },
+  {
+    quote: "Schnell und zuverlässig!",
+    name: "Kunde aus Garching",
+    project: "Entrümpelung",
+    date: "Nov 2024",
+  },
 ];
 
 export const serviceOptions = [

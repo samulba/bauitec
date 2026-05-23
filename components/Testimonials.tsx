@@ -12,9 +12,11 @@ function Stars() {
 }
 
 export function Testimonials() {
+  const loop = [...testimonials, ...testimonials];
+
   return (
-    <section id="referenzen" className="bg-soft">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-28">
+    <section id="referenzen" className="overflow-hidden bg-soft py-16 md:py-28">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
           <Reveal>
             <div>
@@ -26,7 +28,6 @@ export function Testimonials() {
             </div>
           </Reveal>
 
-          {/* MyHammer rating badge */}
           <Reveal delay={100} variant="right">
             <a
               href={myHammer.url}
@@ -49,46 +50,48 @@ export function Testimonials() {
             </a>
           </Reveal>
         </div>
+      </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 110} variant="scale">
-              <figure className="hover-lift relative flex h-full flex-col rounded-2xl border border-line bg-paper p-7 hover:border-amber/40">
-                <span
-                  className="serif-italic pointer-events-none absolute right-5 top-2 select-none text-7xl leading-none text-amber/15"
-                  aria-hidden
-                >
-                  ”
+      {/* Infinite marquee of reviews */}
+      <div className="marquee mt-12 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] md:mt-16">
+        <div className="marquee-track" style={{ animationDuration: "50s" }}>
+          {loop.map((t, i) => (
+            <figure
+              key={i}
+              className="hover-lift relative mr-5 flex w-[300px] shrink-0 flex-col whitespace-normal rounded-2xl border border-line bg-paper p-6 sm:w-[360px]"
+            >
+              <span
+                className="serif-italic pointer-events-none absolute right-5 top-1 select-none text-6xl leading-none text-amber/15"
+                aria-hidden
+              >
+                ”
+              </span>
+              <Stars />
+              <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-ink/80">
+                {t.quote}
+              </blockquote>
+              <figcaption className="mt-6 border-t border-line pt-4">
+                <span className="block text-sm font-medium text-ink">
+                  {t.name}
                 </span>
-                <Stars />
-                <blockquote className="mt-4 flex-1 text-base leading-relaxed text-ink/80">
-                  {t.quote}
-                </blockquote>
-                <figcaption className="mt-6 border-t border-line pt-5">
-                  <span className="block text-sm font-medium text-ink">
-                    {t.name}
-                  </span>
-                  <span className="eyebrow mt-1 block text-stone">
-                    {t.project} · {t.date}
-                  </span>
-                </figcaption>
-              </figure>
-            </Reveal>
+                <span className="eyebrow mt-1 block text-stone">
+                  {t.project} · {t.date}
+                </span>
+              </figcaption>
+            </figure>
           ))}
         </div>
+      </div>
 
-        <Reveal delay={120}>
-          <div className="mt-10 text-center">
-            <a
-              href={myHammer.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink/50 hover:bg-ink/[0.03]"
-            >
-              Alle Bewertungen auf MyHammer ansehen →
-            </a>
-          </div>
-        </Reveal>
+      <div className="mx-auto mt-12 max-w-6xl px-6 text-center">
+        <a
+          href={myHammer.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink/50 hover:bg-ink/[0.03]"
+        >
+          Alle Bewertungen auf MyHammer ansehen →
+        </a>
       </div>
     </section>
   );
