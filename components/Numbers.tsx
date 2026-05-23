@@ -5,7 +5,7 @@ import { ProgressRing } from "./ProgressRing";
 export function Numbers() {
   return (
     <section className="bg-soft">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal>
           <p className="eyebrow text-stone">— bauitec in Zahlen</p>
           <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
@@ -27,7 +27,7 @@ export function Numbers() {
 
             <div className="relative grid grid-cols-1 gap-px bg-line-dark sm:grid-cols-2 lg:grid-cols-3">
               {/* Featured tile */}
-              <div className="group relative flex flex-col justify-between bg-ink p-8 transition-colors duration-300 hover:bg-ink-soft md:p-10 lg:row-span-2">
+              <div className="group relative flex flex-col justify-between bg-ink p-6 transition-colors duration-300 hover:bg-ink-soft md:p-10 lg:row-span-2">
                 <span className="block h-[3px] w-10 bg-amber transition-all duration-500 group-hover:w-20" />
                 <div className="mt-8 lg:mt-24">
                   <p className="text-6xl font-semibold tracking-tight sm:text-7xl md:text-8xl">
@@ -43,7 +43,7 @@ export function Numbers() {
               </div>
 
               {/* Progress ring tile */}
-              <div className="group flex flex-col items-start gap-5 bg-ink p-8 transition-colors duration-300 hover:bg-ink-soft md:p-10">
+              <div className="group flex flex-col items-start gap-5 bg-ink p-6 transition-colors duration-300 hover:bg-ink-soft md:p-10">
                 <ProgressRing value={98} />
                 <div>
                   <p className="text-base font-medium">Zufriedenheit</p>
@@ -57,7 +57,7 @@ export function Numbers() {
               <Tile value={7} label="Gewerke" text="Vom Aushub bis zur Übergabe in einer Hand." />
 
               {/* Wide tile */}
-              <div className="group relative flex flex-col justify-center bg-ink p-8 transition-colors duration-300 hover:bg-ink-soft md:p-10 lg:col-span-2">
+              <div className="group relative flex flex-col justify-center bg-ink p-6 transition-colors duration-300 hover:bg-ink-soft md:p-10 lg:col-span-2">
                 <span className="block h-[3px] w-10 bg-amber transition-all duration-500 group-hover:w-20" />
                 <div className="mt-6 flex flex-wrap items-baseline gap-x-5 gap-y-2">
                   <p className="text-6xl font-semibold tracking-tight md:text-7xl">
@@ -88,7 +88,7 @@ function Tile({
   text: string;
 }) {
   return (
-    <div className="group relative flex flex-col justify-center bg-ink p-8 transition-colors duration-300 hover:bg-ink-soft md:p-10">
+    <div className="group relative flex flex-col justify-center bg-ink p-6 transition-colors duration-300 hover:bg-ink-soft md:p-10">
       <span className="block h-[3px] w-10 bg-amber transition-all duration-500 group-hover:w-20" />
       <p className="mt-6 text-6xl font-semibold tracking-tight md:text-7xl">
         <CountUp end={value} />

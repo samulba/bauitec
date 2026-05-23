@@ -27,7 +27,7 @@ export function Process() {
 
   return (
     <section id="prozess" className="bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-32">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-32">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           {/* Sticky overview */}
           <div className="lg:sticky lg:top-28 lg:self-start">
@@ -88,7 +88,7 @@ export function Process() {
                   ref={(el) => {
                     refs.current[i] = el;
                   }}
-                  className="relative py-10 pl-10 lg:min-h-[56vh] lg:py-0 lg:pl-14 lg:flex lg:flex-col lg:justify-center"
+                  className="relative py-7 pl-10 lg:min-h-[56vh] lg:py-0 lg:pl-14 lg:flex lg:flex-col lg:justify-center"
                 >
                   {/* node */}
                   <span

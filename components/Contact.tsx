@@ -5,7 +5,7 @@ import { site } from "@/lib/content";
 export function Contact() {
   return (
     <section id="kontakt" className="bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-32">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-32">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2">
           <Reveal>
             <div>

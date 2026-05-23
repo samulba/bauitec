@@ -77,7 +77,7 @@ export function Hero() {
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-amber" />
                 </span>
                 <span className="eyebrow text-paper/80">
-                  Bauunternehmen · Poing bei München
+                  Bauunternehmen · Poing
                 </span>
               </div>
             </div>

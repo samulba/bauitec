@@ -12,7 +12,7 @@ export function Services() {
 
   return (
     <section id="leistungen" className="bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-32">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-32">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
           <Reveal>
             <div>
@@ -31,13 +31,13 @@ export function Services() {
           </Reveal>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line lg:mt-16 lg:grid-cols-4">
           {services.map((s, i) => (
             <Reveal key={s.num} delay={(i % 4) * 80} variant="scale">
               <button
                 type="button"
                 onClick={() => setOpenIdx(i)}
-                className="group relative flex h-full w-full flex-col overflow-hidden bg-paper p-7 text-left transition-colors duration-300 hover:bg-soft"
+                className="group relative flex h-full w-full flex-col overflow-hidden bg-paper p-5 text-left transition-colors duration-300 hover:bg-soft sm:p-7"
               >
                 <span
                   className="absolute right-0 top-0 h-1 w-0 bg-amber transition-all duration-500 group-hover:w-full"
@@ -46,17 +46,17 @@ export function Services() {
                 <p className="eyebrow text-stone transition-colors group-hover:text-amber">
                   {s.num} · {s.label}
                 </p>
-                <div className="mt-6 text-amber transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110">
+                <div className="mt-5 text-amber transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110 sm:mt-6">
                   <ServiceIcon name={s.icon} />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold tracking-tight">
+                <h3 className="mt-4 text-base font-semibold tracking-tight sm:mt-5 sm:text-xl">
                   {s.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/65">
+                <p className="mt-2 hidden flex-1 text-sm leading-relaxed text-ink/65 sm:block">
                   {s.text}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-amber opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  Mehr erfahren →
+                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-amber sm:mt-5 sm:text-sm sm:opacity-0 sm:transition-opacity sm:duration-300 sm:group-hover:opacity-100">
+                  Mehr →
                 </span>
               </button>
             </Reveal>
