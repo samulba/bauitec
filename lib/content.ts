@@ -17,6 +17,7 @@ export const nav = [
 
 export type Service = {
   num: string;
+  slug: string;
   label: string;
   title: string;
   text: string;
@@ -28,6 +29,7 @@ export type Service = {
 export const services: Service[] = [
   {
     num: "01",
+    slug: "sanierung",
     label: "Sanierung",
     title: "Sanierung",
     text: "Komplettsanierung von Wohn- und Geschäftsräumen. Abriss, Estrich, Trockenbau, Boden, Fliesen — in einem Zug.",
@@ -42,6 +44,7 @@ export const services: Service[] = [
   },
   {
     num: "02",
+    slug: "betonarbeiten",
     label: "Betonarbeiten",
     title: "Betonarbeiten",
     text: "Fundamente, Bodenplatten, Stützmauern. Eigene Schalungen, eigene Geräte — auch für komplexe Geometrien.",
@@ -56,6 +59,7 @@ export const services: Service[] = [
   },
   {
     num: "03",
+    slug: "trockenbau",
     label: "Trockenbau",
     title: "Trockenbau",
     text: "Wände, Decken, abgehängte Konstruktionen. Brandschutz und Schallschutz nach DIN — sauber verspachtelt.",
@@ -70,6 +74,7 @@ export const services: Service[] = [
   },
   {
     num: "04",
+    slug: "fliesenverlegung",
     label: "Fliesenverlegung",
     title: "Fliesenverlegung",
     text: "Bad, Küche, Außenbereich. Großformat, Mosaik, XXL-Platten — präzise verfugt, sauber abgesetzt.",
@@ -84,6 +89,7 @@ export const services: Service[] = [
   },
   {
     num: "05",
+    slug: "bodenbelaege",
     label: "Bodenbeläge",
     title: "Bodenbeläge",
     text: "Parkett, Vinyl, Laminat, Estrich. Vom Untergrund bis zur fertigen Oberfläche — alle Beläge, alle Räume.",
@@ -98,6 +104,7 @@ export const services: Service[] = [
   },
   {
     num: "06",
+    slug: "gartenbau",
     label: "Gartenbau",
     title: "Gartenbau",
     text: "Pflasterung, Hochbeete, Zäune, Terrassen. Außenanlagen mit Charakter — solide gebaut, sauber abgesetzt.",
@@ -112,6 +119,7 @@ export const services: Service[] = [
   },
   {
     num: "07",
+    slug: "abbruch",
     label: "Abbruch",
     title: "Abbruch",
     text: "Selektiver Rückbau und Komplettabbruch. Eigene Bagger, eigene Container — Entsorgung inklusive.",
@@ -126,6 +134,7 @@ export const services: Service[] = [
   },
   {
     num: "08",
+    slug: "eigene-geraete",
     label: "Eigene Geräte",
     title: "Eigene Geräte",
     text: "Gerüst, Zaun, Schalungen, Bagger — alles im eigenen Bestand. Keine Mietgeräte, keine Wartezeiten.",
