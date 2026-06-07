@@ -108,6 +108,20 @@ export default function ImpressumPage() {
               ).
             </p>
           </Section>
+
+          <Section title="Konzeption & Umsetzung">
+            <p>
+              Webdesign, Entwicklung und Umsetzung dieser Website:{" "}
+              <a
+                href="https://www.framepath.de"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Framepath
+              </a>
+              .
+            </p>
+          </Section>
         </article>
       </main>
       <Footer />

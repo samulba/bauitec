@@ -68,7 +68,18 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 border-t border-line-dark pt-8 text-sm text-paper/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Bauitec GmbH · Poing bei München</p>
+          <p>
+            © {new Date().getFullYear()} Bauitec GmbH · Poing bei München{" "}
+            <span className="text-paper/30">·</span>{" "}
+            <a
+              href="https://www.framepath.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-paper"
+            >
+              by Framepath
+            </a>
+          </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link prefetch={false} href="/impressum" className="transition-colors hover:text-paper">
               Impressum
