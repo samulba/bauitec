@@ -1,147 +1,266 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Impressum — bauitec",
-  description: "Impressum und Anbieterkennzeichnung der bauitec.",
+  description: "Impressum und Anbieterkennzeichnung der Bauitec GmbH.",
   robots: { index: false, follow: true },
 };
+
+const sections = [
+  {
+    num: "01",
+    title: "Angaben gemäß § 5 DDG",
+    content: (
+      <p>
+        Bauitec GmbH
+        <br />
+        Carl-Spitzweg-Platz 5
+        <br />
+        85586 Poing
+        <br />
+        Deutschland
+      </p>
+    ),
+  },
+  {
+    num: "02",
+    title: "Handelsregister",
+    content: (
+      <p>
+        Handelsregister: 263036
+        <br />
+        Registergericht: Amtsgericht München
+      </p>
+    ),
+  },
+  {
+    num: "03",
+    title: "Vertreten durch",
+    content: <p>[Vorname] Gashi</p>,
+  },
+  {
+    num: "04",
+    title: "Kontakt",
+    content: (
+      <p>
+        Telefon: <a href="tel:+4917620269408">+49 176 20269408</a>
+        <br />
+        E-Mail: <a href="mailto:Bauitec@outlook.com">Bauitec@outlook.com</a>
+      </p>
+    ),
+  },
+  {
+    num: "05",
+    title: "Umsatzsteuer-ID",
+    content: (
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
+        <br />
+        DE281976972
+      </p>
+    ),
+  },
+  {
+    num: "06",
+    title: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+    content: (
+      <p>
+        [Vorname] Gashi
+        <br />
+        Carl-Spitzweg-Platz 5, 85586 Poing
+      </p>
+    ),
+  },
+  {
+    num: "07",
+    title: "EU-Streitschlichtung",
+    content: (
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur
+        Online-Streitbeilegung (OS) bereit:{" "}
+        <a
+          href="https://ec.europa.eu/consumers/odr/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ec.europa.eu/consumers/odr
+        </a>
+        . Unsere E-Mail-Adresse findest du oben im Impressum.
+      </p>
+    ),
+  },
+  {
+    num: "08",
+    title: "Verbraucherstreitbeilegung / Universalschlichtungsstelle",
+    content: (
+      <p>
+        Wir nehmen an einem Streitbeilegungsverfahren vor einer
+        Verbraucherschlichtungsstelle teil. Zuständig ist die
+        Universalschlichtungsstelle des Zentrums für Schlichtung e.V.,
+        Straßburger Straße 8, 77694 Kehl am Rhein (
+        <a
+          href="https://www.verbraucher-schlichter.de"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          verbraucher-schlichter.de
+        </a>
+        ).
+      </p>
+    ),
+  },
+  {
+    num: "09",
+    title: "Konzeption & Umsetzung",
+    content: (
+      <p>
+        Webdesign, Entwicklung und Umsetzung dieser Website:{" "}
+        <a
+          href="https://www.framepath.de"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Framepath
+        </a>
+        .
+      </p>
+    ),
+  },
+];
 
 export default function ImpressumPage() {
   return (
     <>
       <Nav solid />
-      <main className="flex-1 bg-paper">
-        <article className="mx-auto max-w-3xl px-6 pt-32 pb-16 md:pt-40 md:pb-24">
-          <p className="eyebrow text-stone">Rechtliches</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight">
-            Impressum
-          </h1>
+      <main className="flex-1">
+        {/* Hero */}
+        <section className="relative overflow-hidden bg-ink pt-28 pb-16 text-paper md:pt-36 md:pb-24">
+          <div
+            className="blueprint pointer-events-none absolute inset-0 text-amber opacity-30 [mask-image:radial-gradient(70%_60%_at_30%_25%,black,transparent)]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute -right-40 -top-32 h-[40rem] w-[40rem] rounded-full bg-amber/15 blur-[140px]"
+            aria-hidden
+          />
+          <span
+            aria-hidden
+            className="serif-italic pointer-events-none absolute right-[-2rem] top-1/2 -translate-y-1/2 select-none text-[16rem] leading-none text-amber/[0.07] md:text-[24rem]"
+          >
+            §
+          </span>
 
-          <p className="mt-4 rounded-lg border border-amber/40 bg-amber/10 px-4 py-3 text-sm text-ink/70">
-            Hinweis: Bitte ergänze noch den/die Namen der
-            vertretungsberechtigten Geschäftsführer (unten mit
-            <span className="font-medium"> [in eckigen Klammern]</span>{" "}
-            markiert).
-          </p>
-
-          <Section title="Angaben gemäß § 5 DDG">
-            <p>
-              Bauitec GmbH
-              <br />
-              Carl-Spitzweg-Platz 5
-              <br />
-              85586 Poing
-              <br />
-              Deutschland
+          <div className="relative mx-auto max-w-[1280px] px-6 lg:px-12">
+            <nav aria-label="Breadcrumb" className="eyebrow flex flex-wrap items-center gap-2 text-paper/55">
+              <Link href="/" className="hover:text-paper">Startseite</Link>
+              <span aria-hidden>/</span>
+              <span className="text-amber">Impressum</span>
+            </nav>
+            <p className="eyebrow mt-10 text-amber">— Rechtliches</p>
+            <h1 className="mt-5 text-[3rem] font-semibold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl">
+              Impressum.
+            </h1>
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-paper/70 sm:text-lg">
+              Anbieterkennzeichnung und gesetzliche Pflichtangaben der Bauitec
+              GmbH gemäß § 5 DDG und § 18 Abs. 2 MStV.
             </p>
-          </Section>
+          </div>
+        </section>
 
-          <Section title="Handelsregister">
-            <p>
-              Handelsregister: 263036
-              <br />
-              Registergericht: Amtsgericht München
-            </p>
-          </Section>
+        {/* Body */}
+        <section className="bg-paper">
+          <div className="mx-auto max-w-[1280px] px-6 py-16 md:py-24 lg:px-12">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+              {/* Sticky quick info */}
+              <aside className="lg:sticky lg:top-28 lg:self-start">
+                <div className="overflow-hidden rounded-3xl border border-line bg-soft">
+                  <div className="border-b border-line bg-paper px-6 py-5">
+                    <p className="eyebrow text-stone">Auf einen Blick</p>
+                    <p className="mt-3 text-2xl font-semibold tracking-tight">
+                      Bauitec GmbH
+                    </p>
+                    <p className="mt-1 text-sm text-ink/60">
+                      Bauunternehmen aus Poing bei München
+                    </p>
+                  </div>
+                  <dl className="divide-y divide-line/70">
+                    <Row label="Adresse">
+                      Carl-Spitzweg-Platz 5<br />
+                      85586 Poing
+                    </Row>
+                    <Row label="E-Mail" href="mailto:Bauitec@outlook.com">
+                      Bauitec@outlook.com
+                    </Row>
+                    <Row label="Telefon" href="tel:+4917620269408">
+                      +49 176 20269408
+                    </Row>
+                    <Row label="HRB">263036 · AG München</Row>
+                    <Row label="USt-IdNr.">DE281976972</Row>
+                  </dl>
+                </div>
 
-          <Section title="Vertreten durch">
-            <p>[Vorname] Gashi</p>
-          </Section>
+                <div className="mt-6 rounded-2xl border border-amber/30 bg-amber/10 px-5 py-4 text-sm text-ink/75">
+                  <span className="font-medium text-ink">Hinweis: </span>
+                  Bitte ergänze noch den Vornamen des Geschäftsführers (steht
+                  unten als <code className="rounded bg-ink/10 px-1.5 py-0.5 text-xs">[Vorname] Gashi</code>).
+                </div>
+              </aside>
 
-          <Section title="Kontakt">
-            <p>
-              Telefon:{" "}
-              <a href="tel:+4917620269408">+49 176 20269408</a>
-              <br />
-              E-Mail:{" "}
-              <a href="mailto:Bauitec@outlook.com">Bauitec@outlook.com</a>
-            </p>
-          </Section>
-
-          <Section title="Umsatzsteuer-ID">
-            <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a
-              Umsatzsteuergesetz:
-              <br />
-              DE281976972
-            </p>
-          </Section>
-
-          <Section title="Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV">
-            <p>
-              [Vorname] Gashi
-              <br />
-              Carl-Spitzweg-Platz 5, 85586 Poing
-            </p>
-          </Section>
-
-          <Section title="EU-Streitschlichtung">
-            <p>
-              Die Europäische Kommission stellt eine Plattform zur
-              Online-Streitbeilegung (OS) bereit:{" "}
-              <a
-                href="https://ec.europa.eu/consumers/odr/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://ec.europa.eu/consumers/odr/
-              </a>
-              . Unsere E-Mail-Adresse findest du oben im Impressum.
-            </p>
-          </Section>
-
-          <Section title="Verbraucherstreitbeilegung / Universalschlichtungsstelle">
-            <p>
-              Wir nehmen an einem Streitbeilegungsverfahren vor einer
-              Verbraucherschlichtungsstelle teil. Zuständig ist die
-              Universalschlichtungsstelle des Zentrums für Schlichtung e.V.,
-              Straßburger Straße 8, 77694 Kehl am Rhein (
-              <a
-                href="https://www.verbraucher-schlichter.de"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://www.verbraucher-schlichter.de
-              </a>
-              ).
-            </p>
-          </Section>
-
-          <Section title="Konzeption & Umsetzung">
-            <p>
-              Webdesign, Entwicklung und Umsetzung dieser Website:{" "}
-              <a
-                href="https://www.framepath.de"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Framepath
-              </a>
-              .
-            </p>
-          </Section>
-        </article>
+              {/* Sections */}
+              <div className="space-y-4">
+                {sections.map((s) => (
+                  <article
+                    key={s.num}
+                    className="group rounded-2xl border border-line bg-paper p-6 transition-colors hover:border-amber/40 hover:bg-soft/40 md:p-7"
+                  >
+                    <div className="flex items-start gap-5">
+                      <span className="font-mono text-sm font-semibold text-amber">
+                        {s.num}
+                      </span>
+                      <div className="flex-1">
+                        <h2 className="text-lg font-semibold tracking-tight sm:text-xl">
+                          {s.title}
+                        </h2>
+                        <div className="mt-3 leading-relaxed text-ink/75 [&_a]:text-amber [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:no-underline">
+                          {s.content}
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
   );
 }
 
-function Section({
-  title,
+function Row({
+  label,
+  href,
   children,
 }: {
-  title: string;
+  label: string;
+  href?: string;
   children: React.ReactNode;
 }) {
+  const value = href ? (
+    <a className="text-ink transition-colors hover:text-amber" href={href}>
+      {children}
+    </a>
+  ) : (
+    <span className="text-ink">{children}</span>
+  );
   return (
-    <section className="mt-10">
-      <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
-      <div className="mt-3 leading-relaxed text-ink/75 [&_a]:text-amber [&_a]:underline [&_a]:underline-offset-4">
-        {children}
-      </div>
-    </section>
+    <div className="flex flex-col gap-1 px-6 py-4 sm:flex-row sm:items-baseline sm:gap-6">
+      <dt className="eyebrow w-24 shrink-0 text-stone">{label}</dt>
+      <dd className="text-sm leading-relaxed sm:text-base">{value}</dd>
+    </div>
   );
 }

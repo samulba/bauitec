@@ -76,14 +76,8 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Designed & built by Framepath"
-                className="group inline-flex items-center gap-2.5 rounded-full border border-line-dark/80 bg-ink-soft/40 py-1.5 pl-1.5 pr-3.5 text-xs text-paper/65 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-amber/60 hover:bg-ink-soft/70 hover:text-paper"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-line-dark/80 bg-ink-soft/40 px-4 py-1.5 text-xs text-paper/65 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-amber/60 hover:bg-ink-soft/70 hover:text-paper"
               >
-                <span
-                  aria-hidden
-                  className="flex h-6 w-6 items-center justify-center rounded-full bg-amber/15 font-mono text-[10px] font-semibold text-amber transition-colors group-hover:bg-amber group-hover:text-ink"
-                >
-                  F
-                </span>
                 <span className="eyebrow text-paper/45 transition-colors group-hover:text-paper/70">
                   Designed by
                 </span>
