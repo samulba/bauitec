@@ -82,11 +82,11 @@ export function Numbers() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="mt-12 grid grid-cols-1 border-t-2 border-amber/60 sm:grid-cols-2 md:mt-16 lg:grid-cols-4">
+          <div className="mt-16 grid grid-cols-1 border-t-2 border-amber/60 sm:grid-cols-2 md:mt-20 xl:grid-cols-4">
             {stats.map((s) => (
               <div
                 key={s.index}
-                className="group flex flex-col gap-6 border-b border-line py-8 pr-6 sm:py-10 lg:py-12 lg:pr-8 lg:[&:not(:last-child)]:border-r lg:[&:not(:last-child)]:border-line"
+                className="group flex flex-col gap-8 border-b border-line py-10 pr-6 sm:py-12 lg:py-14 lg:pr-8 xl:py-16 xl:pr-10 xl:[&:not(:last-child)]:border-r xl:[&:not(:last-child)]:border-line"
               >
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-stone">
@@ -95,14 +95,14 @@ export function Numbers() {
                   <span className="h-px flex-1 bg-line transition-colors duration-500 group-hover:bg-amber" />
                 </div>
 
-                <p className="text-6xl font-semibold leading-[0.9] tracking-[-0.02em] sm:text-7xl md:text-[5.5rem] lg:text-[6.5rem]">
+                <p className="text-[3.75rem] font-semibold leading-[0.9] tracking-[-0.02em] sm:text-[5rem] md:text-[5.5rem] xl:text-[6rem]">
                   <CountUp end={s.value} />
                   {s.suffix && <span className="text-amber">{s.suffix}</span>}
                 </p>
 
                 <div>
                   <p className="text-base font-medium text-ink">{s.label}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink/55">
+                  <p className="mt-3 text-sm leading-relaxed text-ink/55">
                     {s.text}
                   </p>
                 </div>
@@ -112,7 +112,7 @@ export function Numbers() {
         </Reveal>
 
         <Reveal delay={200}>
-          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.28em] text-stone">
+          <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.28em] text-stone">
             Quelle — Eigene Auswertung &amp; Bauherren-Bewertungen · Stand 2026
           </p>
         </Reveal>
