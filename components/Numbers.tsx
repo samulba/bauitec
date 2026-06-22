@@ -5,7 +5,7 @@ import { ProgressRing } from "./ProgressRing";
 export function Numbers() {
   return (
     <section className="bg-soft">
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-14 md:py-28">
         <Reveal>
           <p className="eyebrow text-stone">— bauitec in Zahlen</p>
           <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">

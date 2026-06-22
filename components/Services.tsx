@@ -6,7 +6,7 @@ import { services } from "@/lib/content";
 export function Services() {
   return (
     <section id="leistungen" className="bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-14 md:py-32">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
           <Reveal>
             <div>

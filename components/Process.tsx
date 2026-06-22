@@ -27,7 +27,7 @@ export function Process() {
 
   return (
     <section id="prozess" className="bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-14 md:py-32">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           {/* Sticky overview */}
           <div className="lg:sticky lg:top-28 lg:self-start">

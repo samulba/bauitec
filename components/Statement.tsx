@@ -11,7 +11,7 @@ export function Statement() {
         “
       </span>
 
-      <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-40">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-16 md:py-40">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[auto_1fr] md:gap-16">
           <Reveal className="md:pt-3">
             <div className="flex items-center gap-3 md:flex-col md:items-start md:gap-4">

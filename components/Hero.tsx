@@ -70,7 +70,7 @@ export function Hero() {
         className="pointer-events-none absolute -bottom-32 left-1/2 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-amber/10 blur-[120px]"
         aria-hidden
       />
-      <div className="relative mx-auto w-full max-w-6xl px-6">
+      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-12">
         <div className="grid items-center gap-10 xl:grid-cols-[1.12fr_0.88fr]">
           {/* Left: content */}
           <div>
@@ -168,7 +168,7 @@ export function Hero() {
       </div>
 
       {/* Scroll hint */}
-      <div className="relative mx-auto mt-8 hidden w-full max-w-6xl px-6 md:mt-12 md:block">
+      <div className="relative mx-auto mt-8 hidden w-full max-w-7xl px-6 lg:px-12 md:mt-12 md:block">
         <div className="flex items-center gap-3 text-paper/50">
           <span className="relative flex h-9 w-5 justify-center rounded-full border border-paper/30">
             <span className="mt-1.5 h-1.5 w-1 animate-bounce rounded-full bg-amber" />

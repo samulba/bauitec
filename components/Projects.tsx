@@ -6,7 +6,7 @@ import { projects } from "@/lib/content";
 export function Projects() {
   return (
     <section id="projekte" className="bg-ink text-paper">
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-14 md:py-32">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
           <Reveal>
             <div>
