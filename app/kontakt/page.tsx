@@ -66,7 +66,7 @@ export default function KontaktPage() {
       <Nav solid />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-ink pt-32 pb-16 text-paper md:pt-44 md:pb-28">
+        <section className="relative overflow-hidden bg-ink pt-32 pb-20 text-paper md:pt-40 md:pb-24">
           <div
             className="blueprint pointer-events-none absolute inset-0 text-amber opacity-50 [mask-image:radial-gradient(90%_80%_at_60%_10%,black,transparent)]"
             aria-hidden
@@ -75,7 +75,7 @@ export default function KontaktPage() {
             className="pointer-events-none absolute -right-32 -top-24 h-[38rem] w-[38rem] rounded-full bg-amber/15 blur-[130px]"
             aria-hidden
           />
-          <div className="relative mx-auto grid max-w-[1280px] items-center gap-12 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12">
             <div>
               <Reveal>
                 <div className="inline-flex items-center gap-2.5 rounded-full border border-line-dark bg-ink-soft/60 px-4 py-2 backdrop-blur-sm">
@@ -89,7 +89,7 @@ export default function KontaktPage() {
                 </div>
               </Reveal>
               <Reveal delay={100}>
-                <h1 className="mt-7 text-[2.6rem] font-semibold leading-[0.95] tracking-tight sm:text-6xl sm:leading-[0.92] md:mt-8 md:text-7xl xl:text-8xl">
+                <h1 className="mt-7 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
                   Lass uns über dein{" "}
                   <span className="serif-italic text-amber">Bauvorhaben</span>{" "}
                   reden.
@@ -170,7 +170,7 @@ export default function KontaktPage() {
 
         {/* Steps + Form */}
         <section id="formular" className="scroll-mt-24 bg-paper">
-          <div className="mx-auto max-w-[1280px] px-6 py-16 md:py-28 lg:px-12">
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-12">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
               <Reveal>
                 <div>
@@ -224,7 +224,7 @@ export default function KontaktPage() {
 
         {/* FAQ */}
         <section className="bg-soft">
-          <div className="mx-auto grid max-w-[1280px] gap-12 px-6 py-16 md:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
             <Reveal>
               <div className="lg:sticky lg:top-28 lg:self-start">
                 <p className="eyebrow text-stone">— Häufige Fragen</p>
@@ -255,7 +255,7 @@ export default function KontaktPage() {
             className="blueprint pointer-events-none absolute inset-0 text-amber opacity-40 [mask-image:radial-gradient(80%_120%_at_50%_50%,black,transparent)]"
             aria-hidden
           />
-          <div className="relative mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-8 px-6 py-16 md:flex-row md:items-center md:py-24 lg:px-12">
+          <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-16 md:flex-row md:items-center md:py-24 lg:px-12">
             <div>
               <p className="eyebrow text-amber">— Bereit?</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-5xl">

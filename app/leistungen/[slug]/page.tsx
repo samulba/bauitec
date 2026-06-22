@@ -136,7 +136,7 @@ export default async function LeistungPage({
         />
 
         {/* HERO — dramatic with giant watermark number */}
-        <section className="relative overflow-hidden bg-ink pt-28 pb-20 text-paper md:pt-36 md:pb-32">
+        <section className="relative overflow-hidden bg-ink pt-32 pb-20 text-paper md:pt-40 md:pb-24">
           <div
             className="blueprint pointer-events-none absolute inset-0 text-amber opacity-40 [mask-image:radial-gradient(70%_60%_at_30%_25%,black,transparent)]"
             aria-hidden
@@ -153,7 +153,7 @@ export default async function LeistungPage({
             {service.num}
           </span>
 
-          <div className="relative mx-auto max-w-[1280px] px-6 lg:px-12">
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="eyebrow flex flex-wrap items-center gap-2 text-paper/55">
               <Link href="/" className="hover:text-paper">Startseite</Link>
@@ -173,7 +173,7 @@ export default async function LeistungPage({
                 </span>
               </div>
 
-              <h1 className="mt-8 text-[3rem] font-semibold leading-[0.95] tracking-tight sm:text-[4.5rem] md:text-[6rem] lg:text-[7rem]">
+              <h1 className="mt-8 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
                 {service.title}.
               </h1>
 
@@ -202,7 +202,7 @@ export default async function LeistungPage({
 
         {/* HIGHLIGHTS — three promises band */}
         <section className="bg-ink-soft text-paper">
-          <div className="mx-auto max-w-[1280px] px-6 py-12 md:py-16 lg:px-12">
+          <div className="mx-auto max-w-7xl px-6 py-14 md:py-20 lg:px-12">
             <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line-dark bg-line-dark md:grid-cols-3">
               {highlights.map((h, i) => (
                 <Reveal key={h.title} delay={i * 90} variant="scale">
@@ -225,7 +225,7 @@ export default async function LeistungPage({
 
         {/* WAS WIR MACHEN — editorial */}
         <section className="bg-paper">
-          <div className="mx-auto max-w-[1280px] px-6 py-16 md:py-28 lg:px-12">
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-12">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
               <Reveal>
                 <div>
@@ -260,7 +260,7 @@ export default async function LeistungPage({
 
         {/* ANWENDUNGSFÄLLE — bento with big numbers */}
         <section className="relative overflow-hidden bg-soft">
-          <div className="mx-auto max-w-[1280px] px-6 py-16 md:py-28 lg:px-12">
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-12">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <Reveal>
                 <div>
@@ -300,7 +300,7 @@ export default async function LeistungPage({
 
         {/* ABLAUF — tailored 3 steps */}
         <section className="bg-paper">
-          <div className="mx-auto max-w-[1280px] px-6 py-16 md:py-28 lg:px-12">
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-12">
             <Reveal>
               <p className="eyebrow text-stone">— So läuft&apos;s ab</p>
               <h2 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-[3.25rem] md:leading-[1.05]">
@@ -341,7 +341,7 @@ export default async function LeistungPage({
 
         {/* FAQ — editorial */}
         <section className="bg-soft">
-          <div className="mx-auto grid max-w-[1280px] gap-12 px-6 py-16 md:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:py-28 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
             <Reveal>
               <div className="lg:sticky lg:top-28 lg:self-start">
                 <p className="eyebrow text-stone">— Häufige Fragen</p>
@@ -368,7 +368,7 @@ export default async function LeistungPage({
 
         {/* ANDERE LEISTUNGEN */}
         <section className="bg-ink text-paper">
-          <div className="mx-auto max-w-[1280px] px-6 py-16 md:py-24 lg:px-12">
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-12">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <p className="eyebrow text-amber">— Auch interessant</p>
@@ -420,7 +420,7 @@ export default async function LeistungPage({
             className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber/15 blur-[120px]"
             aria-hidden
           />
-          <div className="relative mx-auto max-w-[1280px] px-6 py-16 md:py-28 lg:px-12">
+          <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-12">
             <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
               <div>
                 <p className="eyebrow text-amber">— Bereit?</p>

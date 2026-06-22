@@ -137,7 +137,7 @@ export default function ImpressumPage() {
       <Nav solid />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-ink pt-28 pb-16 text-paper md:pt-36 md:pb-24">
+        <section className="relative overflow-hidden bg-ink pt-32 pb-20 text-paper md:pt-40 md:pb-24">
           <div
             className="blueprint pointer-events-none absolute inset-0 text-amber opacity-30 [mask-image:radial-gradient(70%_60%_at_30%_25%,black,transparent)]"
             aria-hidden
@@ -153,14 +153,14 @@ export default function ImpressumPage() {
             §
           </span>
 
-          <div className="relative mx-auto max-w-[1280px] px-6 lg:px-12">
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
             <nav aria-label="Breadcrumb" className="eyebrow flex flex-wrap items-center gap-2 text-paper/55">
               <Link href="/" className="hover:text-paper">Startseite</Link>
               <span aria-hidden>/</span>
               <span className="text-amber">Impressum</span>
             </nav>
             <p className="eyebrow mt-10 text-amber">— Rechtliches</p>
-            <h1 className="mt-5 text-[3rem] font-semibold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl">
+            <h1 className="mt-5 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
               Impressum.
             </h1>
             <p className="mt-7 max-w-xl text-base leading-relaxed text-paper/70 sm:text-lg">
@@ -172,7 +172,7 @@ export default function ImpressumPage() {
 
         {/* Body */}
         <section className="bg-paper">
-          <div className="mx-auto max-w-[1280px] px-6 py-16 md:py-24 lg:px-12">
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-12">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
               {/* Sticky quick info */}
               <aside className="lg:sticky lg:top-28 lg:self-start">

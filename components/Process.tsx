@@ -27,11 +27,11 @@ export function Process() {
 
   return (
     <section id="prozess" className="bg-paper">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-14 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           {/* Sticky overview */}
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="eyebrow text-stone">03 — So arbeiten wir</p>
+            <p className="eyebrow text-stone">05 — So arbeiten wir</p>
             <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
               Vier Schritte.{" "}
               <span className="underline-amber">Klar geregelt.</span>

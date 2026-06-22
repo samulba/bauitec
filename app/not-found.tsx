@@ -13,7 +13,7 @@ export default function NotFound() {
     <>
       <Nav solid />
       <main className="flex flex-1 items-center">
-        <section className="relative w-full overflow-hidden bg-ink py-32 text-paper md:py-44">
+        <section className="relative w-full overflow-hidden bg-ink pt-32 pb-20 text-paper md:pt-40 md:pb-24">
           <div
             className="blueprint pointer-events-none absolute inset-0 text-amber opacity-40 [mask-image:radial-gradient(80%_70%_at_50%_30%,black,transparent)]"
             aria-hidden
