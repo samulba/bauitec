@@ -43,10 +43,10 @@ export function Testimonials() {
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-5xl px-6">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex flex-col items-center text-center">
           <Reveal>
-            <p className="eyebrow text-amber">— Referenzen</p>
+            <p className="eyebrow text-amber">04 — Referenzen</p>
           </Reveal>
 
           {/* Rotating quote */}

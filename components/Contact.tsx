@@ -5,11 +5,11 @@ import { site } from "@/lib/content";
 export function Contact() {
   return (
     <section id="kontakt" className="bg-paper">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-14 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-20 md:py-28">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2">
           <Reveal>
             <div>
-              <p className="eyebrow text-stone">05 — Kontakt</p>
+              <p className="eyebrow text-stone">07 — Kontakt</p>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
                 Lass uns über dein{" "}
                 <span className="underline-amber">Bauvorhaben</span> reden.

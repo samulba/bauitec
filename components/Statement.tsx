@@ -11,31 +11,24 @@ export function Statement() {
         “
       </span>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-16 md:py-40">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-[auto_1fr] md:gap-16">
-          <Reveal className="md:pt-3">
-            <div className="flex items-center gap-3 md:flex-col md:items-start md:gap-4">
-              <span className="text-5xl font-semibold tracking-tight text-amber md:text-6xl">
-                01
-              </span>
-              <span className="eyebrow text-stone">Warum bauitec</span>
-            </div>
-          </Reveal>
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-20 md:py-32">
+        <Reveal>
+          <p className="eyebrow text-stone">01 — Warum bauitec</p>
+        </Reveal>
 
-          <Reveal delay={120}>
-            <p className="max-w-4xl text-[1.7rem] font-medium leading-[1.25] tracking-tight sm:text-4xl md:text-[2.9rem]">
-              Viele Bauvorhaben scheitern nicht am Material, sondern an{" "}
-              <span className="text-stone">Abstimmung.</span> Zu viele Gewerke,
-              zu wenig klare Verantwortung.{" "}
-              <span className="serif-italic text-amber">
-                Wir machen das anders
-              </span>{" "}
-              — <span className="underline-draw">eine Baustelle</span>,{" "}
-              <span className="underline-draw">ein Ansprechpartner</span>,{" "}
-              <span className="underline-draw">ein Übergabetermin</span>.
-            </p>
-          </Reveal>
-        </div>
+        <Reveal delay={120}>
+          <p className="mt-8 max-w-4xl text-[1.7rem] font-medium leading-[1.25] tracking-tight sm:text-4xl md:text-[2.9rem]">
+            Viele Bauvorhaben scheitern nicht am Material, sondern an{" "}
+            <span className="text-stone">Abstimmung.</span> Zu viele Gewerke,
+            zu wenig klare Verantwortung.{" "}
+            <span className="serif-italic text-amber">
+              Wir machen das anders
+            </span>{" "}
+            — <span className="underline-draw">eine Baustelle</span>,{" "}
+            <span className="underline-draw">ein Ansprechpartner</span>,{" "}
+            <span className="underline-draw">ein Übergabetermin</span>.
+          </p>
+        </Reveal>
 
         <Reveal delay={220}>
           <div className="mt-16 flex flex-wrap gap-x-12 gap-y-4 border-t border-line pt-8 text-sm text-ink/60">
