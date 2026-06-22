@@ -7,10 +7,20 @@ const items = [
   "Gartenbau",
   "Abbruch",
   "Eigene Geräte",
+  "Architekt",
+  "Statiker",
+  "Elektrik (Partner)",
+  "Sanitär (Partner)",
+  "Reinigung (Partner)",
+  "Kran",
+  "Beton schneiden",
+  "Stürzen",
+  "Zimmertüren",
+  "Auch kleine Objekte",
   "Festpreis",
   "Ein Ansprechpartner",
   "VOB-Gewährleistung",
-  "Region München",
+  "100 km Radius",
 ];
 
 export function Marquee() {

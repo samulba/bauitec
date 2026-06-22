@@ -45,8 +45,8 @@ const highlights = [
     text: "Ein Angebot, ein Preis, alle Gewerke — keine Überraschungen auf der Schlussrechnung.",
   },
   {
-    title: "Eigenes Team & Gerät",
-    text: "Kein Subunternehmer-Chaos. Ein Ansprechpartner, eine klare Verantwortung.",
+    title: "Eigenes Bau-Team",
+    text: "Spezialgewerke koordiniert. Ein Ansprechpartner für alles.",
   },
   {
     title: "5 Jahre Gewährleistung",

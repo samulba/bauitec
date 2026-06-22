@@ -31,16 +31,16 @@ const stats: Stat[] = [
     index: "03",
     category: "Team",
     value: 7,
-    label: "Gewerke",
-    text: "Vom Aushub bis zur Übergabe in einer Hand.",
+    label: "Eigen-Gewerke",
+    text: "Bau-Gewerke in Eigenleistung. Spezialgewerke koordiniert.",
   },
   {
     index: "04",
-    category: "Modell",
-    value: 0,
-    suffix: "€",
-    label: "für Subunternehmer",
-    text: "Eigenes Team, eigene Geräte, klare Verantwortung.",
+    category: "Reichweite",
+    value: 100,
+    suffix: "km",
+    label: "Einsatzradius",
+    text: "Großraum München — auf Wunsch auch darüber hinaus.",
   },
 ];
 

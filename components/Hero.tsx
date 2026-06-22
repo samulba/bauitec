@@ -159,10 +159,7 @@ export function Hero() {
             </div>
             <Stat value={93} suffix="+" label="Bauvorhaben" />
             <Stat value={7} label="Gewerke" />
-            <div>
-              <p className="text-2xl font-semibold tracking-tight">0€</p>
-              <p className="mt-1 text-sm text-paper/60">Subunternehmer</p>
-            </div>
+            <Stat value={100} suffix="km" label="Einsatzradius" />
           </div>
         </div>
       </div>

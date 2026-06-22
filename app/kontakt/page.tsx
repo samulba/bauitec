@@ -45,11 +45,11 @@ const faqs = [
   },
   {
     q: "In welchem Gebiet seid ihr tätig?",
-    a: "Im Großraum München, rund um Poing — etwa im Umkreis von 60 km. Bei größeren Projekten gerne auch darüber hinaus, sprich uns einfach an.",
+    a: "Im Großraum München, rund um Poing — etwa im Umkreis von 100 km. Bei größeren Projekten gerne auch darüber hinaus, sprich uns einfach an.",
   },
   {
     q: "Übernehmt ihr alle Gewerke selbst?",
-    a: "Ja, mit eigenem Team und eigenen Geräten — von Abbruch über Beton, Trockenbau und Fliesen bis zum Garten. Ein Ansprechpartner für alles.",
+    a: "Bau-Gewerke (Sanierung, Beton, Trockenbau, Fliesen, Boden, Garten, Abbruch) machen wir mit eigenem Team und Gerät selbst. Spezialgewerke wie Elektrik, Sanitär und Reinigung sowie Planung (Architekt, Statiker) laufen über geprüfte Partner — alles über bauitec koordiniert. Ein Ansprechpartner für alles.",
   },
 ];
 
