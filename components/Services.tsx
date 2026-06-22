@@ -18,9 +18,10 @@ export function Services() {
           </Reveal>
           <Reveal delay={100}>
             <p className="text-base leading-relaxed text-ink/70 md:text-right md:ml-auto md:max-w-md">
-              Sieben Gewerke, eigenes Gerät, ein Team. Wir nehmen das
-              Bauvorhaben in einer Hand — vom Aushub bis zur letzten Fuge. Keine
-              Subunternehmer-Kette, keine Schnittstellen-Verluste.
+              Sieben Bau-Gewerke in Eigenleistung, mit eigenem Gerät. Planung,
+              Elektrik, Sanitär &amp; Reinigung über geprüfte Partner — alles
+              über bauitec koordiniert. Du sprichst mit einer Person, von der
+              Skizze bis zum Schlüssel.
             </p>
           </Reveal>
         </div>
@@ -57,7 +58,75 @@ export function Services() {
             </Reveal>
           ))}
         </div>
+
+        {/* Sub-Block: erweiterte Capabilities — koordiniert über bauitec */}
+        <Reveal>
+          <div className="mt-16 border-t border-line pt-10 md:mt-20 md:pt-12">
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
+              <div className="md:col-span-4">
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-stone">
+                  + Auch Teil deines Bauvorhabens
+                </p>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+                  Alles über uns{" "}
+                  <span className="serif-italic text-amber">koordiniert</span>.
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                  Du brauchst nur einen Ansprechpartner — Mitat kümmert sich um
+                  Partner, Planung und Equipment. Auch kleine Objekte.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3 md:col-span-8">
+                <CapabilityColumn
+                  eyebrow="Planung"
+                  items={["Architekt", "Statiker"]}
+                />
+                <CapabilityColumn
+                  eyebrow="Spezial-Partner"
+                  items={["Elektrik", "Sanitär", "Reinigung"]}
+                />
+                <CapabilityColumn
+                  eyebrow="Equipment"
+                  items={[
+                    "Kran",
+                    "Beton schneiden",
+                    "Stürzen",
+                    "Zimmertüren",
+                    "Balkone",
+                    "Schalungen",
+                    "Gerüst & Zaun",
+                    "Maschinen",
+                  ]}
+                />
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
+  );
+}
+
+function CapabilityColumn({
+  eyebrow,
+  items,
+}: {
+  eyebrow: string;
+  items: string[];
+}) {
+  return (
+    <div className="bg-paper p-5 sm:p-6">
+      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-stone">
+        {eyebrow}
+      </p>
+      <ul className="mt-4 space-y-1.5 text-sm text-ink/80">
+        {items.map((i) => (
+          <li key={i} className="flex items-center gap-2">
+            <span className="h-1 w-1 rounded-full bg-amber" />
+            {i}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

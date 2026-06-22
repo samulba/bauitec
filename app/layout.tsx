@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "bauitec — Wir bauen, was bleibt.",
     description:
-      "Sanierung, Innenausbau, Beton- und Gartenarbeiten in einer Hand. Eigenes Team, eigene Geräte. Poing bei München.",
+      "Sanierung, Innenausbau, Beton- und Gartenarbeiten — alles aus einer Hand. Eigenes Team & Gerät, koordinierte Partner für Planung, Elektrik & Sanitär. Großraum München, 100 km Radius.",
     type: "website",
     locale: "de_DE",
     siteName: "bauitec",

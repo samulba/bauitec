@@ -4,7 +4,7 @@ export const site = {
   email: "Bauitec@outlook.com",
   phone: "+49 176 20269408",
   location: "Poing bei München",
-  region: "Großraum München · 60 km Radius",
+  region: "Großraum München · 100 km Radius",
 };
 
 export const nav = [
@@ -153,7 +153,7 @@ export const stats = [
   { value: "93", suffix: "+", label: "Bauvorhaben", text: "Abgeschlossene Projekte im Großraum München" },
   { value: "98", suffix: "%", label: "Zufriedenheit", text: "Kundinnen und Kunden würden uns weiterempfehlen" },
   { value: "7", suffix: "", label: "Gewerke", text: "Vom Aushub bis zur Übergabe in einer Hand" },
-  { value: "0", suffix: "€", label: "Subunternehmer", text: "Eigenes Team, eigene Geräte, klare Verantwortung" },
+  { value: "100", suffix: "km", label: "Einsatzradius", text: "Großraum München — auf Wunsch auch darüber hinaus" },
 ];
 
 export const process = [
@@ -252,7 +252,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Herr Gashi von Bauitec war pünktlich vor Ort und hat den Auftrag vollständig ausgeführt. Ich kann Bauitec weiterempfehlen.",
+      "Herr Mitat von Bauitec war pünktlich vor Ort und hat den Auftrag vollständig ausgeführt. Ich kann Bauitec weiterempfehlen.",
     name: "Bertrand, Herrsching",
     project: "Sondermüll",
     date: "Okt 2024",

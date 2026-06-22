@@ -39,7 +39,7 @@ const sections = [
   {
     num: "03",
     title: "Vertreten durch",
-    content: <p>[Vorname] Gashi</p>,
+    content: <p>Mitat</p>,
   },
   {
     num: "04",
@@ -68,7 +68,7 @@ const sections = [
     title: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
     content: (
       <p>
-        [Vorname] Gashi
+        Mitat
         <br />
         Carl-Spitzweg-Platz 5, 85586 Poing
       </p>
@@ -197,15 +197,10 @@ export default function ImpressumPage() {
                     <Row label="Telefon" href="tel:+4917620269408">
                       +49 176 20269408
                     </Row>
+                    <Row label="Geschäftsführer">Mitat</Row>
                     <Row label="HRB">263036 · AG München</Row>
                     <Row label="USt-IdNr.">DE281976972</Row>
                   </dl>
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-amber/30 bg-amber/10 px-5 py-4 text-sm text-ink/75">
-                  <span className="font-medium text-ink">Hinweis: </span>
-                  Bitte ergänze noch den Vornamen des Geschäftsführers (steht
-                  unten als <code className="rounded bg-ink/10 px-1.5 py-0.5 text-xs">[Vorname] Gashi</code>).
                 </div>
               </aside>
 
