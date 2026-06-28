@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Impressum — bauitec",
@@ -197,6 +198,7 @@ export default function ImpressumPage() {
                     <Row label="Telefon" href="tel:+4981214739307">
                       +49 8121 4739307
                     </Row>
+                    <Row label="Geschäftszeiten">{site.hours}</Row>
                     <Row label="Geschäftsführer">Mitat</Row>
                     <Row label="HRB">263036 · AG München</Row>
                     <Row label="USt-IdNr.">DE281976972</Row>

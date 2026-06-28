@@ -5,6 +5,8 @@ export const site = {
   phone: "+49 8121 4739307",
   location: "Poing bei München",
   region: "Großraum München · 100 km Radius",
+  hours: "Mo–Fr 08:00–17:00 Uhr",
+  hoursShort: "Mo–Fr 8–17 Uhr",
 };
 
 export const nav = [

@@ -53,11 +53,23 @@ const faqs = [
   },
 ];
 
-const methods = [
+const methods: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href?: string;
+  hint?: string;
+}[] = [
   { icon: <MailIcon />, label: "E-Mail", value: site.email, href: `mailto:${site.email}` },
-  { icon: <PhoneIcon />, label: "Telefon", value: site.phone },
+  {
+    icon: <PhoneIcon />,
+    label: "Telefon",
+    value: site.phone,
+    hint: `Erreichbar ${site.hoursShort}`,
+  },
+  { icon: <ClockIcon />, label: "Öffnungszeiten", value: site.hours },
   { icon: <PinIcon />, label: "Sitz", value: site.location },
-  { icon: <ClockIcon />, label: "Einsatzgebiet", value: site.region },
+  { icon: <PinIcon />, label: "Einsatzgebiet", value: site.region },
 ];
 
 export default function KontaktPage() {
@@ -136,6 +148,11 @@ export default function KontaktPage() {
                           <p className="mt-0.5 text-base text-paper">
                             {m.value}
                           </p>
+                          {m.hint && (
+                            <p className="mt-0.5 text-xs text-paper/55">
+                              {m.hint}
+                            </p>
+                          )}
                         </div>
                       </div>
                     );
