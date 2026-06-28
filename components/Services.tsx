@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { ServiceIcon } from "./Icons";
 import { services } from "@/lib/content";
@@ -29,20 +28,12 @@ export function Services() {
         <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line lg:mt-16 lg:grid-cols-4">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 4) * 80} variant="scale">
-              <Link
-                prefetch={false}
-                href={`/leistungen/${s.slug}`}
-                className="group relative flex h-full w-full flex-col overflow-hidden bg-paper p-5 text-left transition-colors duration-300 hover:bg-soft active:bg-soft sm:p-7"
-              >
-                <span
-                  className="absolute right-0 top-0 h-1 w-0 bg-amber transition-all duration-500 group-hover:w-full"
-                  aria-hidden
-                />
-                <p className="eyebrow text-stone transition-colors group-hover:text-amber">
+              <div className="relative flex h-full w-full flex-col overflow-hidden bg-paper p-5 text-left sm:p-7">
+                <p className="eyebrow text-stone">
                   {s.num}
                   <span className="hidden sm:inline"> · {s.label}</span>
                 </p>
-                <div className="mt-4 text-amber transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110 sm:mt-6">
+                <div className="mt-4 text-amber sm:mt-6">
                   <ServiceIcon name={s.icon} />
                 </div>
                 <h3 className="mt-3 text-base font-semibold tracking-tight sm:mt-5 sm:text-xl">
@@ -51,10 +42,7 @@ export function Services() {
                 <p className="mt-2 hidden flex-1 text-sm leading-relaxed text-ink/65 sm:block">
                   {s.text}
                 </p>
-                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-amber transition-transform group-hover:translate-x-1 sm:mt-5 sm:text-sm">
-                  Mehr erfahren →
-                </span>
-              </Link>
+              </div>
             </Reveal>
           ))}
         </div>
