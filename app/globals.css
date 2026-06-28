@@ -75,8 +75,11 @@ body {
   background-size: 100% 0.18em;
 }
 
-/* ---- Scroll reveal variants ---- */
-.reveal {
+/* ---- Scroll reveal variants ----
+   Initial-Hidden-Status NUR wenn JS aktiv ist (Inline-Script in <head> setzt
+   html[data-js]). Ohne JS bleibt der Content sichtbar — keine schwarzen
+   Hero-Bildschirme mehr durch Hydration-Verzögerung oder bfcache-Restore. */
+html[data-js] .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition:
@@ -84,16 +87,16 @@ body {
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
-.reveal.from-left {
+html[data-js] .reveal.from-left {
   transform: translateX(-36px);
 }
-.reveal.from-right {
+html[data-js] .reveal.from-right {
   transform: translateX(36px);
 }
-.reveal.from-scale {
+html[data-js] .reveal.from-scale {
   transform: scale(0.94);
 }
-.reveal.in {
+html[data-js] .reveal.in {
   opacity: 1;
   transform: none;
 }
@@ -109,12 +112,12 @@ body {
     transform: translateY(0);
   }
 }
-.rise {
+html[data-js] .rise {
   opacity: 0;
   animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @media (prefers-reduced-motion: reduce) {
-  .rise {
+  html[data-js] .rise {
     opacity: 1;
     animation: none;
   }

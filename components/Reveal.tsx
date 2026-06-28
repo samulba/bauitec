@@ -30,6 +30,16 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Sofort-Check: schon im Viewport beim Mount? → direkt sichtbar machen,
+    // ohne auf IntersectionObserver zu warten (fixt das Hero-Flash-Problem
+    // auf langsamem Mobile, wo der Observer verzögert feuert).
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -40,7 +50,15 @@ export function Reveal({
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Safety-Timeout: falls der Observer aus irgendeinem Grund nicht feuert
+    // (Browser-Quirk, bfcache, …), Content nach 1.2 s zwangsweise zeigen.
+    const safety = window.setTimeout(() => setVisible(true), 1200);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(safety);
+    };
   }, []);
 
   return (
