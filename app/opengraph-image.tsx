@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { LOGO_DATA_URL } from "./_logo-data";
 
 export const dynamic = "force-static";
 export const alt = "bauitec — Wir bauen, was bleibt.";
@@ -39,26 +40,14 @@ export default function OpenGraphImage() {
             gap: 40,
           }}
         >
-          <svg
-            width="220"
-            height="220"
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="100" cy="100" r="92" fill="#c83a30" />
-            <g
-              fill="none"
-              stroke="#ffffff"
-              strokeWidth="6"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-            >
-              <path d="M40 160 L40 92 L72 70 L72 160 Z" />
-              <path d="M72 160 L72 70 L108 42 L108 160 Z" />
-              <path d="M108 160 L108 66 L162 52 L162 160 Z" />
-              <path d="M38 162 L164 162" />
-            </g>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={LOGO_DATA_URL}
+            width={240}
+            height={240}
+            alt=""
+            style={{ display: "block" }}
+          />
 
           <div
             style={{
