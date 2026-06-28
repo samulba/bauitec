@@ -23,7 +23,8 @@ export function Contact() {
               <dl className="mt-10 space-y-5 border-t border-line pt-8">
                 {[
                   { label: "E-Mail", value: site.email, href: `mailto:${site.email}` },
-                  { label: "Telefon", value: site.phone },
+                  { label: "Telefon", value: site.phone, hint: `Erreichbar ${site.hoursShort}` },
+                  { label: "Öffnungszeiten", value: site.hours },
                   { label: "Sitz", value: site.location },
                   { label: "Einsatzgebiet", value: site.region },
                 ].map((row) => (
@@ -38,6 +39,11 @@ export function Contact() {
                         </a>
                       ) : (
                         row.value
+                      )}
+                      {row.hint && (
+                        <span className="mt-0.5 block text-xs text-ink/55">
+                          {row.hint}
+                        </span>
                       )}
                     </dd>
                   </div>

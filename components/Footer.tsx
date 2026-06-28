@@ -62,7 +62,13 @@ export function Footer() {
                 </a>
               </li>
               <li>{site.location}</li>
-              <li>{site.phone}</li>
+              <li>
+                {site.phone}
+                <span className="mt-0.5 block text-xs text-paper/45">
+                  Erreichbar {site.hoursShort}
+                </span>
+              </li>
+              <li>{site.hours}</li>
             </ul>
           </div>
         </div>
