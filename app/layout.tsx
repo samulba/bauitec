@@ -42,6 +42,12 @@ export const metadata: Metadata = {
     locale: "de_DE",
     siteName: "bauitec",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "bauitec — Wir bauen, was bleibt.",
+    description:
+      "Sanierung, Innenausbau, Beton- und Gartenarbeiten — alles aus einer Hand. Großraum München, 100 km Radius.",
+  },
 };
 
 export default function RootLayout({
