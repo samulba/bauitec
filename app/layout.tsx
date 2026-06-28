@@ -53,7 +53,30 @@ export default function RootLayout({
     <html
       lang="de"
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        {/* Animations-Gate: setzt html[data-js] vor dem ersten Paint. Wenn das
+            JS nie ausgeführt wird (Crash, langsames Netz, alter Browser), bleibt
+            der Content sichtbar — keine unsichtbaren Hero-Texte mehr.
+            Plus: bei bfcache-Restore werden alle CSS-Animationen kurz
+            zurückgesetzt, damit nicht eingefrorene .rise-Elemente unsichtbar
+            bleiben. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.documentElement.setAttribute('data-js','1');
+              addEventListener('pageshow', function(e){
+                if(!e.persisted) return;
+                document.querySelectorAll('.rise').forEach(function(el){
+                  el.style.animation='none';
+                  el.style.opacity='1';
+                });
+              });
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-paper text-ink">
         {children}
         <CookieBanner />
