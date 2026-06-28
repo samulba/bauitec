@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { services } from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -12,11 +11,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/kontakt/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/impressum/`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/datenschutz/`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    ...services.map((s) => ({
-      url: `${BASE}/leistungen/${s.slug}/`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
   ];
 }
