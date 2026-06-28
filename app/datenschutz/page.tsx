@@ -35,7 +35,7 @@ export default function DatenschutzPage() {
               Carl-Spitzweg-Platz 5, 85586 Poing
               <br />
               E-Mail:{" "}
-              <a href="mailto:bauitec@outlook.com">bauitec@outlook.com</a>
+              <a href="mailto:bauiitec@outlook.com">bauiitec@outlook.com</a>
               <br />
               Telefon: <a href="tel:+4981214739307">+49 8121 4739307</a>
             </p>

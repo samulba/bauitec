@@ -48,7 +48,7 @@ const sections = [
       <p>
         Telefon: <a href="tel:+4981214739307">+49 8121 4739307</a>
         <br />
-        E-Mail: <a href="mailto:bauitec@outlook.com">bauitec@outlook.com</a>
+        E-Mail: <a href="mailto:bauiitec@outlook.com">bauiitec@outlook.com</a>
       </p>
     ),
   },
@@ -191,8 +191,8 @@ export default function ImpressumPage() {
                       Carl-Spitzweg-Platz 5<br />
                       85586 Poing
                     </Row>
-                    <Row label="E-Mail" href="mailto:bauitec@outlook.com">
-                      bauitec@outlook.com
+                    <Row label="E-Mail" href="mailto:bauiitec@outlook.com">
+                      bauiitec@outlook.com
                     </Row>
                     <Row label="Telefon" href="tel:+4981214739307">
                       +49 8121 4739307
