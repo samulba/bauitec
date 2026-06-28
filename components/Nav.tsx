@@ -33,13 +33,14 @@ export function Nav({ solid = false }: { solid?: boolean }) {
   const lineColor = onDark ? "bg-paper" : "bg-ink";
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        filled
-          ? "bg-paper/85 backdrop-blur-md border-b border-line"
-          : "bg-transparent border-b border-transparent"
-      }`}
-    >
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          filled
+            ? "bg-paper/85 backdrop-blur-md border-b border-line"
+            : "bg-transparent border-b border-transparent"
+        }`}
+      >
       <div
         className={`mx-auto flex max-w-[1680px] items-center justify-between px-6 py-4 transition-colors lg:px-12 ${
           onDark ? "text-paper" : "text-ink"
@@ -135,7 +136,19 @@ export function Nav({ solid = false }: { solid?: boolean }) {
             Anfrage senden →
           </Link>
         </nav>
-      </div>
-    </header>
+        </div>
+      </header>
+
+      {/* Mobile backdrop — blocks clicks/scroll behind the menu */}
+      {open && (
+        <button
+          type="button"
+          aria-label="Menü schließen"
+          tabIndex={-1}
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm md:hidden"
+        />
+      )}
+    </>
   );
 }

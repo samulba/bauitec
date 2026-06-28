@@ -46,9 +46,9 @@ const sections = [
     title: "Kontakt",
     content: (
       <p>
-        Telefon: <a href="tel:+4917620269408">+49 176 20269408</a>
+        Telefon: <a href="tel:+4981214739307">+49 8121 4739307</a>
         <br />
-        E-Mail: <a href="mailto:Bauitec@outlook.com">Bauitec@outlook.com</a>
+        E-Mail: <a href="mailto:bauitec@outlook.com">bauitec@outlook.com</a>
       </p>
     ),
   },
@@ -191,11 +191,11 @@ export default function ImpressumPage() {
                       Carl-Spitzweg-Platz 5<br />
                       85586 Poing
                     </Row>
-                    <Row label="E-Mail" href="mailto:Bauitec@outlook.com">
-                      Bauitec@outlook.com
+                    <Row label="E-Mail" href="mailto:bauitec@outlook.com">
+                      bauitec@outlook.com
                     </Row>
-                    <Row label="Telefon" href="tel:+4917620269408">
-                      +49 176 20269408
+                    <Row label="Telefon" href="tel:+4981214739307">
+                      +49 8121 4739307
                     </Row>
                     <Row label="Geschäftsführer">Mitat</Row>
                     <Row label="HRB">263036 · AG München</Row>

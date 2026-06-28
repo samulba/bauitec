@@ -1,8 +1,8 @@
 export const site = {
   name: "bauitec",
   tagline: "Wir bauen, was bleibt.",
-  email: "Bauitec@outlook.com",
-  phone: "+49 176 20269408",
+  email: "bauitec@outlook.com",
+  phone: "+49 8121 4739307",
   location: "Poing bei München",
   region: "Großraum München · 100 km Radius",
 };
